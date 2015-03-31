@@ -20,10 +20,11 @@
 		<!-- Create link logout -->
 		<a href="<?= $logout_url ?>">Logout</a> 
 	    <!-- Display login when start home page first -->
-		<?php else: ?>
-		<h2>Login with Facebook Using CodeIgniter</h2>
-		<a href="<?= $login_url ?>">Login</a> 
+
+<!--		<h2>Login with Facebook Using CodeIgniter</h2>-->
+<!--		<a href="--><?//= $login_url ?><!--">Login</a>-->
 		<?php endif; ?>
+
 	</form>
 </div>
 

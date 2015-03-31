@@ -23,6 +23,9 @@ require_once "base_facebook.php";
  */
 class Facebook extends BaseFacebook
 {
+  //This is what i change!!!!!
+  public $fbSession = FALSE;
+  // The end of my changes!
   /**
    * Cookie prefix
    */

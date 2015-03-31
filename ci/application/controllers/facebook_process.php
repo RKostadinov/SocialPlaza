@@ -43,11 +43,32 @@ class Facebook_process extends CI_Controller {
                 'redirect_uri' => site_url('facebook_process/login'),
                 'scope' => array("email") // permissions here
             ));
+            redirect($data['login_url']);
         }
-        $this->load->view('login',$data);
 
+        $this->load->view('login', $data);
 	}
-
+// This is what i change - from here!
+    function post_to_wall($message, $link="", $photourl="")
+    {
+        if($this->fbSession)
+        {
+            $data = array('message'=>$message,'cb' => '');
+            if($photourl!="")
+            {
+                $data["picture"] = $photourl;
+            }
+            if($link!="")
+                $data["link"] = $link;
+            $posts = $this->fb->api('/me/feed','post',$data);
+            return TRUE;
+        }
+        else
+        {
+            return FALSE;
+        }
+    }
+// To here!!
     public function logout(){
 
         $this->load->library('facebook');
@@ -56,7 +77,8 @@ class Facebook_process extends CI_Controller {
         $this->facebook->destroySession();
         // Make sure you destory website session as well.
 
-        redirect('facebook_process/login');
+        redirect('user_authentication/admin_page_show');
+        //redirect('user_authentication/admin_page_show');
     }
 
 }
