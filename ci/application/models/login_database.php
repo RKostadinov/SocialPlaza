@@ -24,6 +24,20 @@
 			}
 		}
 
+        public function confirm($code){
+            $data = array('verified' => NULL);
+            $this->db->where('verified', $code);
+            $str = $this->db->update('users', $data);
+
+
+            if ($str == TRUE) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+
 		// Read data using username and password
 		public function login($data) {
 

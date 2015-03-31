@@ -5,11 +5,9 @@ Class User_Authentication extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		$this->load->helper('form');
 		$this->load->library('form_validation');
-		$this->load->library('session');
 		$this->load->model('login_database');
-		$this->load->helper('url');
+        $this->load->library('email');
 	}
     public function index(){
         if($this->session->userdata('session')){
@@ -40,10 +38,36 @@ Class User_Authentication extends CI_Controller {
 				'name' 			=> $this->input->post('name'),
 				'user_name' 	=> $this->input->post('username'),
 				'user_email' 	=> $this->input->post('email_value'),
-				'user_password' => $this->input->post('password')
+				'user_password' => $this->input->post('password'),
+                'verified'     => sha1(uniqid(rand()))
 			);
 			$result = $this->login_database->registration_insert($data) ;
 			if ($result == TRUE) {
+                $this->email->initialize(array(
+                    'protocol' => 'smtp',
+                    'smtp_host' => 'smtp.sendgrid.net',
+                    'smtp_user' => 'rkostadinov',
+                    'smtp_pass' => 'me3eto123',
+                    'smtp_port' => 587,
+                    'crlf' => "\r\n",
+                    'newline' => "\r\n"
+                ));
+
+                $code = $data['verified'];
+                $message = "http://localhost/ci/user_authentication/confirm/$code";
+                $data = array(
+                    'name' 			=> 'SocialPlaza',
+                    'email' 	    => 'admin@sociaplaza.com',
+                    'text' 	        => $message,
+                    'receiver' 	    => $data['user_email']
+                );
+                $this->email->from($data['email'], $data['name']);
+                $this->email->to($data['receiver']);
+                $this->email->subject('Email verification');
+                $this->email->message($data['text']);
+                $this->email->send();
+
+
 				$data['message_display'] = 'Registration Successfully !';
 				$this->load->view('login_form', $data);
 			} else {
@@ -52,6 +76,15 @@ Class User_Authentication extends CI_Controller {
 		}
 		}
 	}
+    public function confirm($code){
+        $result = $this->login_database->confirm($code);
+
+        if($result == TRUE){
+            echo "Success!";
+        }else{
+            echo "You`re a failure";
+        }
+    }
 	public function user_login_process() {
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
