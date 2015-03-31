@@ -19,5 +19,8 @@
             <a href="<?php echo base_url();?>youtube"><img class="icon" src="<?php echo base_url();?>images/youtube.png"/></a>
             <a href="<?php echo base_url();?>facebook"><img class="icon" src="<?php echo base_url();?>images/facebook.png"/></a>
         </div>
-	</body>
+
+        <a href="<?php echo base_url();?>emails"><img class="icon" src="<?php echo base_url();?>images/email.png"/></a>
+
+    </body>
 </html>
