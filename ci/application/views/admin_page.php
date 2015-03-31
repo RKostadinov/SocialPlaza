@@ -17,7 +17,7 @@
             <a href="<?php echo base_url();?>instagram"><img class="icon" src="<?php echo base_url();?>images/instagram.png"/></a>
             <a href="<?php echo base_url();?>linkedin"><img class="icon" src="<?php echo base_url();?>images/linkedin.png"/></a>
             <a href="<?php echo base_url();?>youtube"><img class="icon" src="<?php echo base_url();?>images/youtube.png"/></a>
-
+            <a href="<?php echo base_url();?>facebook"><img class="icon" src="<?php echo base_url();?>images/facebook.png"/></a>
         </div>
 	</body>
 </html>
