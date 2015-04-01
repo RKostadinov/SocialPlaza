@@ -220,10 +220,7 @@ class Twconnect extends TwitterOAuth {
 	public function tw_post($url, $parameters = array()) {
 		$token = $this->tw_access_token;
 
-		if ($token && isset($token['oauth_token'])
-			&& isset($token['oauth_token_secret'])
-			&& $this->tw_status == 'verified') {
-
+		if ($token && isset($token['oauth_token']) && isset($token['oauth_token_secret']) && $this->tw_status == 'verified') {
 			/* If method is set change API call made. Test is called by default. */
 			return $this->post($url, $parameters);
 		} else {

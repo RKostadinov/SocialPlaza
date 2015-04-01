@@ -12,11 +12,7 @@ class Twtest extends CI_Controller {
     }
 	public function index() {
 		echo '<p><a href="' . base_url() . 'twtest/redirect">Connect to Twitter</a></p>';
-		echo '<p><a href="' . base_url() . 'twtest/clearsession">Clear session</a></p>';
-
-		echo 'Session data:<br/><pre>';
-		print_r($this->session->all_userdata());
-		echo '</pre>';
+		echo '<p><a href="' . base_url() . 'twtest/clearsession">Logout</a></p>';
 	}
 
 	/* redirect to Twitter for authentication */
@@ -42,10 +38,14 @@ class Twtest extends CI_Controller {
 	/* authentication successful */
 	/* it should be a different function from callback */
 	public function success() {
-		echo '<p><a href="' . base_url() . 'twtest/clearsession">Do it again!</a></p>';
+		echo '<p><a href="' . base_url() . 'twtest/clearsession">Logout</a></p>';
 		$this->twconnect->twaccount_verify_credentials();
         echo "<pre>";
 		print_r($this->twconnect->tw_user_info);
+        echo '</pre>';
+
+        echo 'Session data:<br/><pre>';
+        print_r($this->session->all_userdata());
         echo '</pre>';
 	}
 
@@ -59,7 +59,7 @@ class Twtest extends CI_Controller {
 	public function clearsession() {
 		$this->session->unset_userdata('tw_access_token');
         $this->session->unset_userdata('tw_status');
-		redirect('/twtest');
+		redirect('/');
 	}
 
 }

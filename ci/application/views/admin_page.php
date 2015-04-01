@@ -13,7 +13,7 @@
 		</div>
 
         <div id="socialmedia_wrapper">
-            <a href="<?php echo base_url();?>twtest"><img class="icon" src="<?php echo base_url();?>images/twitter.png"/></a>
+            <a href="<?php echo base_url();?>twtest/redirect"><img class="icon" src="<?php echo base_url();?>images/twitter.png"/></a>
             <a href="<?php echo base_url();?>instagram"><img class="icon" src="<?php echo base_url();?>images/instagram.png"/></a>
             <a href="<?php echo base_url();?>linkedin"><img class="icon" src="<?php echo base_url();?>images/linkedin.png"/></a>
             <a href="<?php echo base_url();?>youtube"><img class="icon" src="<?php echo base_url();?>images/youtube.png"/></a>
