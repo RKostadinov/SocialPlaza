@@ -80,9 +80,9 @@ Class User_Authentication extends CI_Controller {
         $result = $this->login_database->confirm($code);
 
         if($result == TRUE){
-            echo "Success!";
+           $this->load->view('verified_email');
         }else{
-            echo "You`re a failure";
+           $this->load->view('err_verifying_email');
         }
     }
 	public function user_login_process() {
@@ -99,23 +99,29 @@ Class User_Authentication extends CI_Controller {
 			$result = $this->login_database->login($data);
 
 			if($result == TRUE){
-				$sess_array = array(
-					'username' => $this->input->post('username')
-				);
-
-				// Add user data in session
-				$result = $this->login_database->read_user_information($sess_array);
-				if($result != false){
-					$data = array(
-						'name' 		=>	$result[0]->name,
-						'username'	=>	$result[0]->user_name,
-						'email'		=>	$result[0]->user_email
+                $verified = $this->login_database->is_verified($data);
+                if($verified == TRUE){
+                    $sess_array = array(
+                        'username' => $this->input->post('username')
                     );
-                    $this->session->set_userdata('session', $data);
-//                    var_dump($this->session->all_userdata());
-                    $data = $this->session->all_userdata();
-                    $this->load->view('admin_page', $data);
+
+                    // Add user data in session
+                    $result = $this->login_database->read_user_information($sess_array);
+                    if($result != false) {
+                        $data = array(
+                            'name' => $result[0]->name,
+                            'username' => $result[0]->user_name,
+                            'email' => $result[0]->user_email
+                        );
+                        $this->session->set_userdata('session', $data);
+                        $data = $this->session->all_userdata();
+                        $this->load->view('admin_page', $data);
+                      }
 				}
+                else{
+                    $this->load->view('non_verified_email');
+
+                }
 			}else{
                 $data['message_display'] = 'Invalid Username or Password';
 				$this->load->view('login_form', $data);
