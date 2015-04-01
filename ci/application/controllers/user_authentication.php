@@ -57,7 +57,7 @@ Class User_Authentication extends CI_Controller {
                 $message = "http://localhost/ci/user_authentication/confirm/$code";
                 $data = array(
                     'name' 			=> 'SocialPlaza',
-                    'email' 	    => 'admin@sociaplaza.com',
+                    'email' 	    => 'admin@sociaplaza.info',
                     'text' 	        => $message,
                     'receiver' 	    => $data['user_email']
                 );
