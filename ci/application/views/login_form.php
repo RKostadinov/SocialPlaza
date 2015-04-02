@@ -124,7 +124,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h1 class="brand-heading">SocialPlaza</h1>
+                    <h1 class="brand-heading">Socia<font color='#337ab7'>l</font>P<font color='#337ab7'>l</font>aza</h1>
 <!--                    <p class="intro-text">A free, responsive, one page Bootstrap theme.<br>Created by Start Bootstrap.</p>-->
 <!--                                    <div id="fullscreen_bg" class="fullscreen_bg"/>-->
 
@@ -202,7 +202,7 @@
         <div class="col-lg-8 col-lg-offset-2">
             <h2>Contact SocialPlaza's developers</h2>
             <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-            <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
+            <p><a href="mailto:admin@socialplaza.info">admin@socialplaza.info</a>
             </p>
             <ul class="list-inline banner-social-buttons">
                 <li>
@@ -220,12 +220,12 @@
 </section>
 
 <!-- Map Section -->
-<div id="map"></div>
+<!--<div id="map"></div>-->
 
 <!-- Footer -->
 <footer>
     <div class="container text-center">
-        <p>Copyright &copy; Your Website 2014</p>
+        <p>Copyright &copy; SocialPlaza 2015</p>
     </div>
 </footer>
 
