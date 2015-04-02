@@ -18,6 +18,14 @@
 		<!-- Display profile name -->
 		<h2><?=$user_profile['name']?></h2>
         <p><?=$user_profile['gender']?></p>
+
+        <?php
+            echo form_open('facebook_process/post_to_wall');
+            echo form_label('What\'s on your mind? ');
+            echo form_input('message');
+            echo form_submit('submit', 'Post');
+            echo form_close();
+        ?>
         <!-- Create link to facebook profile -->
 		<a href="<?=$user_profile['link']?>">View Profile</a>
 		<!-- Create link logout -->
@@ -29,13 +37,6 @@
 		<?php endif; ?>
 
 	</form>
-    <?php
-    echo form_open('facebook_process/post_to_wall');
-    echo form_label('What\'s on your mind? ');
-    echo form_input('message');
-    echo form_submit('submit', 'Post');
-    echo form_close();
-    ?>
 
 </div>
 

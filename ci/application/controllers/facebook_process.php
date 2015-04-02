@@ -72,7 +72,7 @@ class Facebook_process extends CI_Controller
             ));
             redirect($data['login_url']);
         }
-        $my_feed = this->facebook->api('/me/home');
+//        $my_feed = $this->facebook->api('/me/home');
         $this->load->view('login', $data);
 	}
 
