@@ -68,7 +68,7 @@ class Facebook_process extends CI_Controller
         } else {
             $data['login_url'] = $this->facebook->getLoginUrl(array(
                 'redirect_uri' => site_url('facebook_process/login'),
-                'scope' => array("email") // permissions here
+                'scope' => array("email" , "publish_actions") // permissions here
             ));
             redirect($data['login_url']);
         }
