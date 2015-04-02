@@ -7,7 +7,10 @@
 <body>
 
 <div class="container">
+
 	<form>
+        <?php //site_url('facebook_process/loginByFacebook');?>
+        <p>Hello world!</p>
 		<!-- @user_profile check when user login successed  -->
 		<?php if (@$user_profile):  // call var_dump($user_profile) to view all data ?>
 		<!-- Display profile photo -->
@@ -26,6 +29,14 @@
 		<?php endif; ?>
 
 	</form>
+    <?php
+    echo form_open('facebook_process/post_to_wall');
+    echo form_label('What\'s on your mind? ');
+    echo form_input('message');
+    echo form_submit('submit', 'Post');
+    echo form_close();
+    ?>
+
 </div>
 
 </body>
