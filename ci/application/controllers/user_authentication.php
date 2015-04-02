@@ -130,8 +130,7 @@ Class User_Authentication extends CI_Controller {
 	}
 	public function logout() {
 		$this->session->unset_userdata('session');
-		$data['message_display'] = '';
-		$this->load->view('login_form', $data);
+        redirect(base_url());
 	}
 }
 ?>
