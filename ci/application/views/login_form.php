@@ -90,8 +90,8 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">
-                <i class="fa fa-play-circle"></i>  <span class="light">Start</span> Bootstrap
+            <a class="navbar-brand page-scroll" href="#page-top" >
+                <i class="fa fa-play-circle"></i>  <span class="light">Start</span> SocialPlaza
             </a>
         </div>
 
@@ -138,9 +138,55 @@
                                  Sign In
                             </button>
                             <p>or</p>
-                            <button class="btn btn-lg btn-primary btn-block" formaction="user_authentication/user_registration_show">
-                                Sign Up
-                            </button>
+                        </form>
+<!--                    Sign Up modal-->
+                        <?php echo form_open('user_authentication/new_user_registration', array('class'=>'form-signin')); ?>
+                        <button type="button" class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target=".bs-example-modal-lg">Sign Up</button>
+
+                        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">✕</button>
+                                        <h3><font color='#337ab7'>Registration</font></h3>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username" class="form-control input-sm" placeholder="Create username">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="email_value" id="email" class="form-control input-sm" placeholder="Email Address">
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-lg btn-primary btn-block" type="submit">
+                                        Sign Up
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                         </form>
 
 <!--                                    </div>-->
