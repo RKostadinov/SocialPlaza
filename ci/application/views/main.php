@@ -1,53 +1,3 @@
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
-<!--<html>-->
-<!--	<head>-->
-<!--        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
-<!--		<title>SocialPlaza | Login Form</title>-->
-<!--		<link rel="stylesheet" type="text/css" href="--><?php //echo base_url(); ?><!--css/style.css">-->
-<!--		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>-->
-<!--	</head>-->
-<!--	<body>-->
-<!--		--><?php
-//			if (isset($logout_message)) {
-//				echo "<div class='message'>";
-//				echo $logout_message;
-//				echo "</div>";
-//			}
-//		?>
-<!--		--><?php
-//			if (isset($message_display)) {
-//				echo "<div class='message'>";
-//				echo $message_display;
-//				echo "</div>";
-//			}
-//		?>
-<!--		<div id="main">-->
-<!--			<div id="login">-->
-<!--				<h2>Login</h2>-->
-<!--				--><?php
-//				 	echo form_open('user_authentication/user_login_process');
-//					echo "<div class='error_msg'>";
-//					if (isset($error_message)) {
-//						echo $error_message;
-//					}
-//					echo validation_errors();
-//					echo "</div>";
-//					echo form_label('Username:');
-//					echo form_input('username');
-//					echo form_label('Password:');
-//					echo form_password('password');
-//					echo "<br/>";
-//					echo form_submit('submit', 'Login');
-//					echo form_close();
-//				?>
-<!--				<a href="user_registration_show">SignUp</a>-->
-<!--			</div>-->
-<!--		</div>-->
-<!--	</body>-->
-<!--</html>-->
-<!---->
-<!---->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,7 +13,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="css/grayscale.css" rel="stylesheet">
 
@@ -100,7 +50,7 @@
             <ul class="nav navbar-nav">
                 <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                 <li class="hidden">
-                    <a class="page-scroll" href="#page-top"></a>
+                    <a href="#page-top"></a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#about">About</a>
@@ -124,44 +74,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h1 class="brand-heading">SocialPlaza</h1>
-<!--                    <p class="intro-text">A free, responsive, one page Bootstrap theme.<br>Created by Start Bootstrap.</p>-->
-<!--                                    <div id="fullscreen_bg" class="fullscreen_bg"/>-->
-
-<!--                                    <div class="container">-->
-
-                        <?php echo form_open('user_authentication/user_login_process', array('class'=>'form-signin')); ?>
-<!--                            <h1 class="form-signin-heading text-muted">Sign In</h1>-->
-                            <input type="text" name="username" class="form-control" placeholder="Username" required="" autofocus="">
-                            <input type="password" name="password" class="form-control" placeholder="Password" required="">
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">
-                                 Sign In
-                            </button>
-                            <p>or</p>
-                            <button class="btn btn-lg btn-primary btn-block" action="user_authentication/user_registration_show">
-                                Sign Up
-                            </button>
-                        </form>
-
-<!--                                    </div>-->
-<!--                    				--><?php
-//                    				 	echo form_open('user_authentication/user_login_process');
-//                    					echo "<div class='error_msg'>";
-//                    					if (isset($error_message)) {
-//                    						echo $error_message;
-//                    					}
-//                    					echo validation_errors();
-//                    					echo "</div>";
-//                    					echo form_label('Username:');
-//                    					echo form_input('username');
-//                                        echo "<br/>";
-//                    					echo form_label('Password:');
-//                    					echo form_password('password');
-//                    					echo "<br/>";
-//                    					echo form_submit('submit', 'Login');
-//                    					echo form_close();
-//                    				?>
-<!--                    				<a href="user_registration_show">SignUp</a>-->
+                    <h1 class="brand-heading">Grayscale</h1>
+                    <p class="intro-text">A free, responsive, one page Bootstrap theme.<br>Created by Start Bootstrap.</p>
                     <a href="#about" class="btn btn-circle page-scroll">
                         <i class="fa fa-angle-double-down animated"></i>
                     </a>
@@ -175,7 +89,7 @@
 <section id="about" class="container content-section text-center">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
-            <h2>About SocialPlaza</h2>
+            <h2>About Grayscale</h2>
             <p>Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
             <p>This theme features stock photos by <a href="http://gratisography.com/">Gratisography</a> along with a custom Google Maps skin courtesy of <a href="http://snazzymaps.com/">Snazzy Maps</a>.</p>
             <p>Grayscale includes full HTML, CSS, and custom JavaScript files along with LESS files for easy customization.</p>
@@ -200,7 +114,7 @@
 <section id="contact" class="container content-section text-center">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
-            <h2>Contact SocialPlaza's developers</h2>
+            <h2>Contact Start Bootstrap</h2>
             <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
             <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
             </p>
@@ -247,4 +161,3 @@
 </body>
 
 </html>
-

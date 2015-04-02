@@ -1,6 +1,8 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
-		<title>Registration Form</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>SocialPlaza | Registration Form</title>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>
 	</head>
