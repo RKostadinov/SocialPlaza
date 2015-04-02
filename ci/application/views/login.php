@@ -8,9 +8,9 @@
 
 <div class="container">
 
-	<form>
+<!--	<form>-->
         <?php //site_url('facebook_process/loginByFacebook');?>
-        <p>Hello world!</p>
+<!--        <p>Hello world!</p>-->
 		<!-- @user_profile check when user login successed  -->
 		<?php if (@$user_profile):  // call var_dump($user_profile) to view all data ?>
 		<!-- Display profile photo -->
@@ -26,6 +26,7 @@
             echo form_submit('submit', 'Post');
             echo form_close();
         ?>
+
         <!-- Create link to facebook profile -->
 		<a href="<?=$user_profile['link']?>">View Profile</a>
 		<!-- Create link logout -->
@@ -35,8 +36,7 @@
 <!--		<h2>Login with Facebook Using CodeIgniter</h2>-->
 <!--		<a href="--><?//= $login_url ?><!--">Login</a>-->
 		<?php endif; ?>
-
-	</form>
+<!--	</form>-->
 
 </div>
 
