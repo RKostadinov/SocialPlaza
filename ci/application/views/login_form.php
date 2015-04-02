@@ -59,7 +59,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Grayscale - Start Bootstrap Theme</title>
+    <title>SocialPlaza</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -138,7 +138,7 @@
                                  Sign In
                             </button>
                             <p>or</p>
-                            <button class="btn btn-lg btn-primary btn-block" action="user_authentication/user_registration_show">
+                            <button class="btn btn-lg btn-primary btn-block" formaction="user_authentication/user_registration_show">
                                 Sign Up
                             </button>
                         </form>
