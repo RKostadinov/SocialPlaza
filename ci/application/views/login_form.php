@@ -91,7 +91,7 @@
                 <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand page-scroll" href="#page-top">
-                <i class="fa fa-play-circle"></i>  <span class="light">Start</span> Bootstrap
+                <div class="nav-logo">SocialPlaza</div>
             </a>
         </div>
 
