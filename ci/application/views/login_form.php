@@ -90,8 +90,13 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                 <i class="fa fa-bars"></i>
             </button>
+<<<<<<< HEAD
             <a class="navbar-brand page-scroll" href="#page-top" >
                 <i class="fa fa-play-circle"></i>  <span class="light">Start</span> SocialPlaza
+=======
+            <a class="navbar-brand page-scroll" href="#page-top">
+                <div class="nav-logo">SocialPlaza</div>
+>>>>>>> 89f5cbc1fb59022f2b1839063ff0022f85bc238d
             </a>
         </div>
 

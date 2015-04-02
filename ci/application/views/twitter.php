@@ -5,19 +5,24 @@
 </head>
 <body>
 <?php
-//foreach ($statuses as $tweet) {
-//    $name = $tweet->user->name;
-//    $text = $tweet->text;
-//    echo "<div class = 'tweet'>";
-//    echo $name ;
-//    echo "<br />";
-//    echo $text;
-//    echo "<br />";
-//    echo "</div>";
-//}
-//?>
+    //print_r($user_info);
+    echo "<img src='$profile_image_url' /><br />";
+    echo "<a href='https://twitter.com/$screen_name' style='text-decoration: none'><h3 style='display:inline'>$name </h3><h5 style='display:inline'>"."@"."$screen_name</h5></a><br />";
+    echo "Followers: $followers_count<br />";
+    echo "Friends: $friends_count<br />";
+    echo '<p><a href="' . base_url() . 'twitter/clearsession">Logout</a></p>';
 
-<a href="<?php echo base_url();?>twitter/reset_session">Logout</a>
+    $data = array('name' => 'tweet_text',
+                  'placeholder' => 'Tweet text :)');
+    echo form_open('twitter/tweet');
+    echo form_input($data);
+    echo form_submit('submit', 'Tweet');
+    echo form_close();
+    echo "<br />";
+//    echo 'Session data:<br/><pre>';
+//    print_r($this->session->all_userdata());
+//    echo '</pre>';
+?>
 </body>
 
 </html>
