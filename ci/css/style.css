@@ -20,48 +20,24 @@ span{
 color:red;
 }
 
-h2{
-background-color: #FEFFED;
-text-align:center;
-border-radius: 10px 10px 0 0;
-margin: -10px -40px;
-padding: 30px;
-}
+/*h2{*/
+/*background-color: #FEFFED;*/
+/*text-align:center;*/
+/*border-radius: 10px 10px 0 0;*/
+/*margin: -10px -40px;*/
+/*padding: 30px;*/
+/*}*/
 
-#login{
-margin:0 auto;
-width:300px;
-border-radius: 10px;
-font-family:raleway;
-border: 2px solid #ccc;
-padding: 10px 40px 25px;
-margin-top: 70px;
-    background: #ffffff;
-}
-
-input[type=text],input[type=password], input[type=email]{
-/*width:99.5%;*/
-padding: 10px;
-margin-top: 8px;
-border: 1px solid #ccc;
-padding-left: 5px;
-font-size: 16px;
-font-family:raleway;
-}
-
-input[type=submit]{
-/*width: 100%;*/
-background-color:#FFBC00;
-color: white;
-border: 2px solid #FFCB00;
-padding: 10px;
-font-size:15px;
-cursor:pointer;
-border-radius: 5px;
-margin-bottom: 15px;
-margin-top: 10px;
-margin-left: 10px;
-}
+/*#login{*/
+/*margin:0 auto;*/
+/*width:300px;*/
+/*border-radius: 10px;*/
+/*font-family:raleway;*/
+/*border: 2px solid #ccc;*/
+/*padding: 10px 40px 25px;*/
+/*margin-top: 70px;*/
+    /*background: #ffffff;*/
+/*}*/
 
 #profile{
 /*padding:50px;*/
@@ -138,7 +114,7 @@ text-align: center;
 }
 .form-signin {
     max-width: 400px;
-    padding: 15px;
+    padding: 0px;
     margin: 0 auto;
     margin-top:0px;
 }
@@ -158,7 +134,7 @@ text-align: center;
     z-index: 2;
 }
 .form-signin input[type="text"] {
-    margin-bottom: -1px;
+    margin-bottom: 3px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-top-style: solid;
@@ -186,21 +162,26 @@ text-align: center;
 
 /*Sign Up*/
 
-.text_block {
-    display: block;
-    padding-left: 10%;
-    width: 95%;
-    height: 34px;
-    font-size: 14px;
-    /*line-height: 1.42857143;*/
-    color: #555;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
+/*input[type=text],input[type=password], input[type=email]{*/
+    /*width:99.5%;*/
+    /*padding: 10px;*/
+    /*margin-top: 8px;*/
+    /*border: 1px solid #ccc;*/
+    /*padding-left: 5px;*/
+    /*font-size: 16px;*/
+    /*font-family:raleway;*/
+/*}*/
 
-.text {
-    width: 95%;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
+/*input[type=submit]{*/
+    /*width: 100%;*/
+    /*background-color:#FFBC00;*/
+    /*color: white;*/
+    /*border: 2px solid #FFCB00;*/
+    /*padding: 10px;*/
+    /*font-size:15px;*/
+    /*cursor:pointer;*/
+    /*border-radius: 5px;*/
+    /*margin-bottom: 15px;*/
+    /*margin-top: 10px;*/
+    /*margin-left: 10px;*/
+/*}*/

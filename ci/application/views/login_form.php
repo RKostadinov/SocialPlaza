@@ -138,53 +138,58 @@
                             <button class="btn btn-lg btn-primary btn-block" type="submit">
                                  Sign In
                             </button>
-                            <p>or</p>
+                    <p>or</p>
                         </form>
 <!--                    Sign Up modal-->
                         <?php echo form_open('user_authentication/new_user_registration', array('class'=>'form-signin')); ?>
                         <button type="button" class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target=".bs-example-modal-md">Sign Up</button>
-
                         <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="myMiddleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-md">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">✕</button>
-                                        <h3><font color='#337ab7'>Registration</font></h3>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h3 class="modal-title"><font color='#337ab7'>Registration</font></h3>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-xs-6 col-sm-6 col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" name="first_name" id="first_name" class="text_block" placeholder="First Name">
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-md-6 col-lg-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="first_name" id="first_name" class="form-control input-md" placeholder="First Name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6 col-md-6 col-lg-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="last_name" id="last_name" class="form-control input-md" placeholder="Last Name">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" name="last_name" id="last_name" class="text_block" placeholder="Last Name">
+                                                <input name="username" id="username" class="form-control input-md" placeholder="Create username">
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="username" id="username" class="text" placeholder="Create username">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" name="email_value" id="email" class="text" placeholder="Email Address">
-                                    </div>
+                                            <div class="form-group">
+                                                <input type="email" name="email_value" id="email" class="form-control input-md" placeholder="Email Address">
+                                            </div>
 
-                                    <div class="row">
-                                        <div class="col-xs-6 col-sm-6 col-md-6">
-                                            <div class="form-group">
-                                                <input type="password" name="password" id="password" class="form-control" placeholder="Password">
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-6 col-sm-6 col-md-6">
-                                            <div class="form-group">
-                                                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                                            <div class="row">
+                                                <div class="col-xs-6 col-md-6 col-lg-6">
+                                                    <div class="form-group">
+                                                        <input type="password" name="password" id="password" class="form-control input-md" placeholder="Password">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6 col-md-6 col-lg-6">
+                                                    <div class="form-group">
+                                                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-md" placeholder="Confirm Password">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="btn btn-lg btn-primary btn-block" type="submit">
-                                        Sign Up
-                                    </button>
+                                    <div class="modal-footer">
+        <!--                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+        <!--                            <button type="button" class="btn btn-primary">Save changes</button>-->
+                                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -223,9 +228,9 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
             <h2>About SocialPlaza</h2>
-            <p>Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
-            <p>This theme features stock photos by <a href="http://gratisography.com/">Gratisography</a> along with a custom Google Maps skin courtesy of <a href="http://snazzymaps.com/">Snazzy Maps</a>.</p>
-            <p>Grayscale includes full HTML, CSS, and custom JavaScript files along with LESS files for easy customization.</p>
+            <p>SocialPlaza is web app that provides the amazing opportunity to post to your favourite social website such as <a href="http://facebook.com">facebook</a>, <a href="http://twitter.com">twitter</a> and etc.</p>
+            <p>An easy way to entertain your followers just with one button and not only that!</p>
+            <p>You can still see your feeds from the other social website.</p>
         </div>
     </div>
 </section>
@@ -248,9 +253,12 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
             <h2>Contact SocialPlaza's developers</h2>
-            <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-            <p><a href="mailto:admin@socialplaza.info">admin@socialplaza.info</a>
-            </p>
+            <p>Feel free to email us if you have troubles login or you have questions.</p>
+            <p>We works for our users!</p>
+            </br>
+            <p><a href="mailto:admin@socialplaza.info">admin@socialplaza.info</a></p>
+            </br>
+            </br>
             <ul class="list-inline banner-social-buttons">
                 <li>
                     <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
@@ -265,7 +273,7 @@
         </div>
     </div>
 </section>
-
+<hr>
 <!-- Map Section -->
 <!--<div id="map"></div>-->
 
