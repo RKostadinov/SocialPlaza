@@ -126,13 +126,7 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <h1 class="brand-heading">Socia<font color='#337ab7'>l</font>P<font color='#337ab7'>l</font>aza</h1>
-<!--                    <p class="intro-text">A free, responsive, one page Bootstrap theme.<br>Created by Start Bootstrap.</p>-->
-<!--                                    <div id="fullscreen_bg" class="fullscreen_bg"/>-->
-
-<!--                                    <div class="container">-->
-
                         <?php echo form_open('user_authentication/user_login_process', array('class'=>'form-signin')); ?>
-<!--                            <h1 class="form-signin-heading text-muted">Sign In</h1>-->
                             <input type="text" name="username" class="form-control" placeholder="Username" required="" autofocus="">
                             <input type="password" name="password" class="form-control" placeholder="Password" required="">
                             <button class="btn btn-lg btn-primary btn-block" type="submit">
@@ -186,16 +180,12 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-        <!--                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
-        <!--                            <button type="button" class="btn btn-primary">Save changes</button>-->
                                         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         </form>
-
-<!--                                    </div>-->
 <!--                    				--><?php
 //                    				 	echo form_open('user_authentication/user_login_process');
 //                    					echo "<div class='error_msg'>";
@@ -213,7 +203,6 @@
 //                    					echo form_submit('submit', 'Login');
 //                    					echo form_close();
 //                    				?>
-<!--                    				<a href="user_registration_show">SignUp</a>-->
                     <a href="#about" class="btn btn-circle page-scroll">
                         <i class="fa fa-angle-double-down animated"></i>
                     </a>
@@ -288,16 +277,16 @@
 <script src="js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
 
 <!-- Plugin JavaScript -->
-<script src="js/jquery.easing.min.js"></script>
+<script src="<?php echo base_url();?>js/jquery.easing.min.js"></script>
 
 <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+<script type="<?php echo base_url();?>text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="js/grayscale.js"></script>
+<script src="<?php echo base_url();?>js/grayscale.js"></script>
 
 </body>
 

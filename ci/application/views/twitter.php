@@ -2,6 +2,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
     <meta charset="utf-8"/>
+    <title>SocialPlaza | Twitter</title>
 </head>
 <body>
 <?php

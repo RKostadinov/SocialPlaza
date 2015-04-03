@@ -81,7 +81,8 @@ class Facebook_process extends CI_Controller
         $this->load->library('facebook/facebook');
 //        if($this->fbSession)
 //        {
-            $param = array('message'=>$this->input->post('message'),'cb' => '');
+            $param = array('message'=>$this->input->post('message'),
+                            'link'=>$this->input->post('link'));
 //            if($photourl!="")
 //            {
 //                $param["picture"] = $photourl;
@@ -100,6 +101,7 @@ class Facebook_process extends CI_Controller
 //        $result = $this->facebook->api('/me/feed/', 'post', $wall_post);
             echo $param['message'];
             $posts = $this->facebook->api('/me/feed','post',$param);
+
 //            return TRUE;
 //        }
 //        else
@@ -118,6 +120,5 @@ class Facebook_process extends CI_Controller
         redirect('user_authentication/admin_page_show');
         //redirect('user_authentication/admin_page_show');
     }
-
 }
 
