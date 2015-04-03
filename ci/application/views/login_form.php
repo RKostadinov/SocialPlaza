@@ -62,10 +62,10 @@
     <title>SocialPlaza | Welcome</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>css/style.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/grayscale.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>css/grayscale.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -130,7 +130,7 @@
                             <input type="text" name="username" class="form-control" placeholder="Username" required="" autofocus="">
                             <input type="password" name="password" class="form-control" placeholder="Password" required="">
                             <button class="btn btn-lg btn-primary btn-block" type="submit">
-                                 Sign In
+                                Sign In
                             </button>
                     <p>or</p>
                         </form>
@@ -274,7 +274,7 @@
 </footer>
 
 <!-- jQuery -->
-<script src="js/jquery.js"></script>
+<script src="<?php echo base_url();?>js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
