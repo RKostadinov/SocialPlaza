@@ -44,6 +44,8 @@ $route['user_login_show'] = "user_authentication/user_login_show";
 $route['logout'] = "user_authentication/logout";
 $route['404_override'] = 'errors/page_missing';
 $route['facebook'] = 'facebook_process/login';
+$route['instagram'] = 'welcome';
+$route['translate_uri_dashes'] = FALSE;
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
