@@ -27,22 +27,32 @@ Class User_Authentication extends CI_Controller {
         $this->load->view('admin_page', $data);
     }
 	public function new_user_registration() {
-		$this->form_validation->set_rules('name', 'Name', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('first_name', 'First Name', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('last_name', 'Last Name', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('email_value', 'Email', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
-		if ($this->form_validation->run() == FALSE) {
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|matches[password_confirmation]|md5');
+        $this->form_validation->set_rules('password_confirmation', 'Password Confirmation', 'trim|required|xss_clean');
+
+        if ($this->form_validation->run() == FALSE) {
 			$this->load->view('registration_form');
 		} else {
 			$data = array(
-				'name' 			=> $this->input->post('name'),
-				'user_name' 	=> $this->input->post('username'),
-				'user_email' 	=> $this->input->post('email_value'),
-				'user_password' => $this->input->post('password'),
-                'verified'     => sha1(uniqid(rand()))
+				'first_name' 			=> $this->input->post('first_name'),
+				'last_name' 	=> $this->input->post('last_name'),
+				'username' 	=> $this->input->post('username'),
+				'email_value' => $this->input->post('email_value'),
+                'password'     => $this->input->post('password'),
+                'verified' => sha1(uniqid(rand()))
 			);
+            $email_check = $this->login_database->check_email($data);
+            if($email_check == TRUE){
+//                $data['message_display'] = 'Email already exists!';
+                $this->load->view('registration_form', $data);
+            }
 			$result = $this->login_database->registration_insert($data) ;
 			if ($result == TRUE) {
+
                 $this->email->initialize(array(
                     'protocol' => 'smtp',
                     'smtp_host' => 'smtp.sendgrid.net',
@@ -59,7 +69,7 @@ Class User_Authentication extends CI_Controller {
                     'name' 			=> 'SocialPlaza',
                     'email' 	    => 'admin@sociaplaza.info',
                     'text' 	        => $message,
-                    'receiver' 	    => $data['user_email']
+                    'receiver' 	    => $data['email_value']
                 );
                 $this->email->from($data['email'], $data['name']);
                 $this->email->to($data['receiver']);
@@ -68,10 +78,10 @@ Class User_Authentication extends CI_Controller {
                 $this->email->send();
 
 
-				$data['message_display'] = 'Registration Successfully !';
+//				$data['message_display'] = 'Registration Successfully !';
 				$this->load->view('login_form', $data);
 			} else {
-				$data['message_display'] = 'Username already exist!';
+//				$data['message_display'] = 'Username already exist!';
 				$this->load->view('registration_form', $data);
 		}
 		}
@@ -109,9 +119,9 @@ Class User_Authentication extends CI_Controller {
                     $result = $this->login_database->read_user_information($sess_array);
                     if($result != false) {
                         $data = array(
-                            'name' => $result[0]->name,
-                            'username' => $result[0]->user_name,
-                            'email' => $result[0]->user_email
+                            'name' => $result[0]->first_name,
+                            'username' => $result[0]->username,
+                            'email' => $result[0]->email_value
                         );
                         $this->session->set_userdata('session', $data);
                         $data = $this->session->all_userdata();

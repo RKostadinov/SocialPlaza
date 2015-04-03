@@ -6,10 +6,10 @@
 		public function registration_insert($data) {
 
 			// Query to check whether username already exist or not
-			$condition = "user_name =" . "'" . $data['user_name'] . "'";
+			$condition = "username =" . "'" . $data['username'] . "'";
 			$this->db->select('*');
 			$this->db->from('users');
-			$this->db->where($condition);
+	        		$this->db->where($condition);
 			$this->db->limit(1);
 			$query = $this->db->get();
 			if ($query->num_rows() == 0) {
@@ -24,6 +24,20 @@
 			}
 		}
 
+        public function check_email($data){
+            // Query to check whether email already exist or not
+            $condition = "email_value =" . "'" . $data['email_value'] . "'";
+            $this->db->select('*');
+            $this->db->from('users');
+            $this->db->where($condition);
+            $this->db->limit(1);
+            $query = $this->db->get();
+            if ($query->num_rows() == 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
         public function confirm($code){
             $data = array('verified' => NULL);
             $this->db->where('verified', $code);
@@ -40,8 +54,8 @@
 
 		// Read data using username and password
 		public function login($data) {
-
-			$condition = "user_name =" . "'" . $data['username'] . "' AND " . "user_password =" . "'" . $data['password'] . "'";
+            $password = do_hash($data['password'], 'md5');
+			$condition = "username =" . "'" . $data['username'] . "' AND " . "password =" . "'" . $password . "'";
 			$this->db->select('*');
 			$this->db->from('users');
 			$this->db->where($condition);
@@ -56,7 +70,7 @@
 		}
 
         public function is_verified($data){
-            $condition = "user_name =" . "'" . $data['username'] . "' AND " . "verified IS NULL";
+            $condition = "username =" . "'" . $data['username'] . "' AND " . "verified IS NULL";
             $this->db->select('*');
             $this->db->from('users');
             $this->db->where($condition);
@@ -72,7 +86,7 @@
 		// Read data from database to show data in admin page
 		public function read_user_information($sess_array) {
 
-			$condition = "user_name =" . "'" . $sess_array['username'] . "'";
+			$condition = "username =" . "'" . $sess_array['username'] . "'";
 			$this->db->select('*');
 			$this->db->from('users');
 			$this->db->where($condition);
