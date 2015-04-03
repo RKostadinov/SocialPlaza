@@ -183,3 +183,24 @@ text-align: center;
     text-align: center;
     text-shadow: 0 2px 2px rgba(0,0,0,0.5);
 }
+
+/*Sign Up*/
+
+.text_block {
+    display: block;
+    padding-left: 10%;
+    width: 95%;
+    height: 34px;
+    font-size: 14px;
+    /*line-height: 1.42857143;*/
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.text {
+    width: 95%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}

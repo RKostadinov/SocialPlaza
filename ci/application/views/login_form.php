@@ -142,10 +142,10 @@
                         </form>
 <!--                    Sign Up modal-->
                         <?php echo form_open('user_authentication/new_user_registration', array('class'=>'form-signin')); ?>
-                        <button type="button" class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target=".bs-example-modal-lg">Sign Up</button>
+                        <button type="button" class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target=".bs-example-modal-md">Sign Up</button>
 
-                        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
+                        <div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="myMiddleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-md">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">✕</button>
@@ -154,26 +154,26 @@
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
+                                                <input type="text" name="first_name" id="first_name" class="text_block" placeholder="First Name">
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+                                                <input type="text" name="last_name" id="last_name" class="text_block" placeholder="Last Name">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="username" id="username" class="form-control input-sm" placeholder="Create username">
+                                        <input type="text" name="username" id="username" class="text" placeholder="Create username">
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" name="email_value" id="email" class="form-control input-sm" placeholder="Email Address">
+                                        <input type="email" name="email_value" id="email" class="text" placeholder="Email Address">
                                     </div>
 
                                     <div class="row">
                                         <div class="col-xs-6 col-sm-6 col-md-6">
                                             <div class="form-group">
-                                                <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+                                                <input type="password" name="password" id="password" class="form-control" placeholder="Password">
                                             </div>
                                         </div>
                                         <div class="col-xs-6 col-sm-6 col-md-6">
