@@ -59,7 +59,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SocialPlaza</title>
+    <title>SocialPlaza | Welcome</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -155,7 +155,7 @@
                                             <div class="row">
                                                 <div class="col-xs-6 col-md-6 col-lg-6">
                                                     <div class="form-group">
-                                                        <input type="text" name="first_name" id="first_name" class="form-control input-md" placeholder="First Name">
+                                                        <input type="text" name="first_name" id="first_name" class="form-control input-md"  placeholder="First Name">
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-6 col-md-6 col-lg-6">
@@ -165,7 +165,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <input name="username" id="username" class="form-control input-md" placeholder="Create username">
+                                                <input type="text" name="username" id="username" class="form-control input-md" placeholder="Create username">
                                             </div>
                                             <div class="form-group">
                                                 <input type="email" name="email_value" id="email" class="form-control input-md" placeholder="Email Address">
