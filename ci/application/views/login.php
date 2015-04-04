@@ -51,7 +51,7 @@
 
                             if ($post['type'] == 'link') {
                                 echo "<h2>Link posted on: " . date("jS M, Y", (strtotime($post['created_time']))) . "</h2>";
-                                echo "<p>" . $post['name'] . "</p>";
+                                echo "<p>" . $post['link'] . "</p>";
                                 echo "<p><a href=\"" . $post['link'] . "\" target=\"_blank\">" . $post['link'] . "</a></p>";
                             }
 
