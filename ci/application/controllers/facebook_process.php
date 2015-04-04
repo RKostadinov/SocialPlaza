@@ -6,11 +6,12 @@ class Facebook_process extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-
-        // To use site_url and redirect on this controller.
-        $this->load->helper('url');
     }
 
+        public function index(){
+            $this->show_feed();
+
+        }
 //    function loginByFacebook()
 //    {
 //        echo "loginByFacebook ...";
@@ -68,15 +69,22 @@ class Facebook_process extends CI_Controller
         } else {
             $data['login_url'] = $this->facebook->getLoginUrl(array(
                 'redirect_uri' => site_url('facebook_process/login'),
-                'scope' => array("email" , "publish_actions") // permissions here
+                'scope' => array("email" , "publish_actions", "read_stream", "user_posts" , "user_photos") // permissions here
             ));
             redirect($data['login_url']);
         }
 //        $my_feed = $this->facebook->api('/me/home');
+        $data["feed"] = $this->show_feed();
         $this->load->view('login', $data);
 	}
 
-    function post_to_wall()
+    public function show_feed(){
+            $feed = $this->facebook->api('me/feed');
+        return $feed;
+
+
+    }
+    public function post_to_wall()
     {
         $this->load->library('facebook/facebook');
 //        if($this->fbSession)

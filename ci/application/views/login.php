@@ -18,6 +18,7 @@
             <h2><?=$user_profile['name']?></h2>
             <p><?=$user_profile['gender']?></p>
 
+
             <?php
                 echo form_open('facebook_process/post_to_wall');
                 echo form_label('What\'s on your mind? ');
@@ -34,6 +35,50 @@
                 echo "</br>";
                 echo form_submit('submit', 'Post');
                 echo form_close();
+
+
+
+
+                    $i = 0;
+                    foreach($feed['data'] as $post) {
+
+                        if ($post['type'] == 'status' || $post['type'] == 'link' || $post['type'] == 'photo') {
+
+                            if ($post['type'] == 'status') {
+                                echo "<h4>Status updated on: " . date("jS M, Y", (strtotime($post['created_time']))) . "</h4>";
+                                echo "<p>" . $post['message'] . "</p>";
+                            }
+
+                            if ($post['type'] == 'link') {
+                                echo "<h2>Link posted on: " . date("jS M, Y", (strtotime($post['created_time']))) . "</h2>";
+                                echo "<p>" . $post['name'] . "</p>";
+                                echo "<p><a href=\"" . $post['link'] . "\" target=\"_blank\">" . $post['link'] . "</a></p>";
+                            }
+
+
+                            if ($post['type'] == 'photo') {
+                                echo "<h2>Photo posted on: " . date("jS M, Y", (strtotime($post['created_time']))) . "</h2>";
+                                if (empty($post['story']) === false) {
+                                    echo "<p>" . $post['story'] . "</p>";
+                                } elseif (empty($post['message']) === false) {
+                                    echo "<p>" . $post['message'] . "</p>";
+                                }
+                                echo "<img src =" . $post['picture'] . " />";
+                                echo "<p><a href=\"" . $post['link'] . "\" target=\"_blank\">View photo &rarr;</a></p>";
+                            }
+
+                            echo "</div>";
+
+                            $i++;
+                        }
+
+                        if ($i == 10) {
+                            break;
+                        }
+                    }
+
+
+
             ?>
             <!-- Create link to facebook profile -->
             <a href="<?=$user_profile['link']?>">View Profile</a>
