@@ -67,46 +67,39 @@
     </nav>
 <!-- The end of the menu bar -->
 <!--Side menu, css - grayscale.css, js - slider.js-->
-<!--1. When we scroll down the icon that opens the menu flew away - very annoying if you want to post something.-->
     <div id="wrapper">
 
 <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <nav id="spy">
                 <ul class="sidebar-nav nav">
-                    <li class="sidebar-brand">
-                        <a href="#home"><span class="fa fa-home solo">Home</span></a>
+                    <hr>
+                    <li>
+                        <textarea type="textarea" name="message" placeholder="What do you want to post?" class="post-box"></textarea>
+                    </li>
+                    <hr>
+                    <li>
+                        <p>Facebook</p>
                     </li>
                     <li>
-                        <a href="#anch1" data-scroll>
-                            <span class="fa fa-anchor solo">Facebook</span>
-                        </a>
+                        <p>Twitter</p>
                     </li>
                     <li>
-                        <a href="#anch2" data-scroll>
-                            <span class="fa fa-anchor solo">Twitter</span>
-                        </a>
+                        <p>Instagram</p>
                     </li>
                     <li>
-                        <a href="#anch3" data-scroll>
-                            <span class="fa fa-anchor solo">Instagram</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#anch4" data-scroll>
-                            <span class="fa fa-anchor solo">LinkedIn</span>
-                        </a>
+                        <p>LinkedIn</p>
                     </li>
                 </ul>
             </nav>
         </div>
-        <!--    <div class="content">-->
-        <h1 id="home">
-            <a id="menu-toggle" href="#" class="glyphicon glyphicon-align-justify btn-menu toggle">
-                <i class="fa fa-bars"></i>
-            </a>
-        </h1>
-        <!--    </div>-->
+        <div class="content-header">
+            <h1 id="home">
+                <a id="menu-toggle" href="#" class="glyphicon glyphicon-align-justify btn-menu toggle">
+                    post<i class="fa fa-bars"></i>
+                </a>
+            </h1>
+        </div>
 <!--The end of the side menu        -->
 
 <!-- Page content -->
@@ -124,23 +117,31 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 well">
-                        <legend id="anch1">Facebook</legend>
+                        <legend id="anch1"><a href="<?php echo base_url();?>facebook">Facebook</a></legend>
                     </div>
                     <div class="col-md-12 well">
-                        <legend id="anch2">Twitter</legend>
+                        <legend id="anch2"><a href="<?php echo base_url();?>twitter">Twitter</a></legend>
                     </div>
                     <div class="col-md-12 well">
-                        <legend id="anch3">Instagram</legend>
+                        <legend id="anch3"><a href="<?php echo base_url();?>instagram">Instagram</a></legend>
                     </div>
                     <div class="col-md-12 well">
-                        <legend id="anch4">LinkedIn</legend>
+                        <legend id="anch4"><a href="<?php echo base_url();?>linkedin">LinkedIn</a></legend>
                     </div>
                 </div>
 
                 <div class="navbar navbar-default navbar-static-bottom">
                     <p class="navbar-text pull-left">
+<!--                    <div id="socialmedia_wrapper">-->
+                        <a href="<?php echo base_url();?>twitter"><img class="icon" src="<?php echo base_url();?>img/twitter.png"/></a>
+                        <a href="<?php echo base_url();?>instagram"><img class="icon" src="<?php echo base_url();?>img/instagram.png"/></a>
+                        <a href="<?php echo base_url();?>tumblr"><img class="icon" src="<?php echo base_url();?>img/linkedin.png"/></a>
+                        <a href="<?php echo base_url();?>youtube"><img class="icon" src="<?php echo base_url();?>img/youtube.png"/></a>
+                        <a href="<?php echo base_url();?>facebook"><img class="icon" src="<?php echo base_url();?>img/facebook.png"/></a>
+<!--                    </div>-->
                     </p>
                 </div>
+                <a href="<?php echo base_url();?>emails"><img class="icon" src="<?php echo base_url();?>img/email.png"/></a>
             </div>
 
 
@@ -148,15 +149,6 @@
 
     </div>
 
-    <div id="socialmedia_wrapper">
-        <a href="<?php echo base_url();?>twitter"><img class="icon" src="<?php echo base_url();?>img/twitter.png"/></a>
-        <a href="<?php echo base_url();?>instagram"><img class="icon" src="<?php echo base_url();?>img/instagram.png"/></a>
-        <a href="<?php echo base_url();?>tumblr"><img class="icon" src="<?php echo base_url();?>img/linkedin.png"/></a>
-        <a href="<?php echo base_url();?>youtube"><img class="icon" src="<?php echo base_url();?>img/youtube.png"/></a>
-        <a href="<?php echo base_url();?>facebook"><img class="icon" src="<?php echo base_url();?>img/facebook.png"/></a>
-    </div>
-
-    <a href="<?php echo base_url();?>emails"><img class="icon" src="<?php echo base_url();?>img/email.png"/></a>
 
         <script src="<?php echo base_url();?>js/jquery.js"></script>
         <script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
