@@ -101,7 +101,11 @@ class Facebook_process extends CI_Controller
 //        );
 //        $result = $this->facebook->api('/me/feed/', 'post', $wall_post);
             echo $param['message'];
-            $posts = $this->facebook->api('/me/feed','post',$param);
+            if($posts = $this->facebook->api('/me/feed','post',$param) == TRUE){
+                echo "You successfully upload a file";
+            }else{
+                echo "File upload failed";
+            }
 
 //            return TRUE;
 //        }
@@ -109,6 +113,7 @@ class Facebook_process extends CI_Controller
 //        {
 //            return FALSE;
 //        }
+
     }
     public function logout(){
 
