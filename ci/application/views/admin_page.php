@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>SocialPlaza | Admin Page</title>
-    <!--		<link rel="stylesheet" type="text/css" href="--><?php //echo base_url(); ?><!--css/style.css">-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
     <!--		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>-->
 <!--    <link rel="stylesheet" type="text/css" href="--><?php //echo base_url();?><!--css/user.css">-->
     <link href="<?php echo base_url();?>css/bootstrap.min.css" rel="stylesheet">
@@ -73,16 +73,18 @@
         <!-- /.container -->
     </nav>
 
-<!--        <div id="socialmedia_wrapper">-->
-<!--            <a href="--><?php //echo base_url();?><!--twitter"><img class="icon" src="--><?php //echo base_url();?><!--img/twitter.png"/></a>-->
-<!--            <a href="--><?php //echo base_url();?><!--instagram"><img class="icon" src="--><?php //echo base_url();?><!--img/instagram.png"/></a>-->
-<!--            <a href="--><?php //echo base_url();?><!--linkedin"><img class="icon" src="--><?php //echo base_url();?><!--img/linkedin.png"/></a>-->
-<!--            <a href="--><?php //echo base_url();?><!--youtube"><img class="icon" src="--><?php //echo base_url();?><!--img/youtube.png"/></a>-->
-<!--            <a href="--><?php //echo base_url();?><!--facebook"><img class="icon" src="--><?php //echo base_url();?><!--img/facebook.png"/></a>-->
-<!--        </div>-->
-<!---->
-<!--        <a href="--><?php //echo base_url();?><!--emails"><img class="icon" src="--><?php //echo base_url();?><!--img/email.png"/></a>-->
-        <script src="<?php echo base_url();?>js/jquery.js"></script>
+
+    <div id="socialmedia_wrapper">
+        <a href="<?php echo base_url();?>twitter"><img class="icon" src="<?php echo base_url();?>img/twitter.png"/></a>
+        <a href="<?php echo base_url();?>instagram"><img class="icon" src="<?php echo base_url();?>img/instagram.png"/></a>
+        <a href="<?php echo base_url();?>tumblr"><img class="icon" src="<?php echo base_url();?>img/linkedin.png"/></a>
+        <a href="<?php echo base_url();?>youtube"><img class="icon" src="<?php echo base_url();?>img/youtube.png"/></a>
+        <a href="<?php echo base_url();?>facebook"><img class="icon" src="<?php echo base_url();?>img/facebook.png"/></a>
+    </div>
+
+    <a href="<?php echo base_url();?>emails"><img class="icon" src="<?php echo base_url();?>img/email.png"/></a>
+
+    <script src="<?php echo base_url();?>js/jquery.js"></script>
         <script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
         <script src="<?php echo base_url();?>js/jquery.easing.min.js"></script>
         <script src="<?php echo base_url();?>js/slider.js"></script>

@@ -45,6 +45,7 @@ $route['logout'] = "user_authentication/logout";
 $route['404_override'] = 'errors/page_missing';
 $route['facebook'] = 'facebook_process/login';
 $route['instagram'] = 'welcome';
+$route['tumblr'] = 'tumblrcon';
 $route['translate_uri_dashes'] = FALSE;
 
 /* End of file routes.php */
