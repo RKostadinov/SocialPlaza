@@ -82,7 +82,8 @@ class Facebook_process extends CI_Controller
 //        if($this->fbSession)
 //        {
             $param = array('message'=>$this->input->post('message'),
-                            'link'=>$this->input->post('link'));
+                            'link'=>$this->input->post('link'),
+                            'picture'=>$this->input->post('picture'));
 //            if($photourl!="")
 //            {
 //                $param["picture"] = $photourl;
