@@ -8,6 +8,14 @@
     <link href="<?php echo base_url();?>css/grayscale.css" rel="stylesheet">
     <script src="<?php echo base_url();?>js/side_menu.js"></script>
     <!--        <script src="--><?php //echo base_url();?><!--js/slider.js"></script>-->
+
+    <style>
+        input:checked {
+            height: 20px;
+            width: 20px;
+        }
+    </style>
+
 </head>
 
 <body id="page-top" data-target=".navbar-fixed-top">
@@ -73,10 +81,9 @@
         <div id="sidebar-wrapper">
             <nav id="spy">
                 <ul class="sidebar-nav nav">
-                    <hr>
-                    <li>
+
                         <textarea type="textarea" name="message" placeholder="What do you want to post?" class="post-box"></textarea>
-                    </li>
+                    <!--</li>
                     <hr>
                     <li>
                         <p>Facebook</p>
@@ -89,7 +96,23 @@
                     </li>
                     <li>
                         <p>LinkedIn</p>
-                    </li>
+                    </li>-->
+<!--
+                    <div id="check">
+                        <form action="demo_form.asp" method="get">
+                           <p> <input type="checkbox" name="vehicle" value="facebook"> Facebook<br></p>
+                            <p><input type="checkbox" name="vehicle" value="twitter" checked> Twitter<br></p>
+                            <p><input type="checkbox" name="vehicle" value="instagram"> Instagram<br></p>
+                            <p><input type="checkbox" name="vehicle" value="linkein" checked>LinkedIn<br></p>
+                        </form>
+
+-->
+                    <form action="">
+                        <p><input type="checkbox" value="facebook"> Facebook<br></p>
+                        <p><input type="checkbox" value="twitter" > Twitter<br></p>
+                        <p><input type="checkbox" value="instagram"> Instagram<br></p>
+                        <p><input type="checkbox" value="linkein" >LinkedIn<br></p>
+                    </form>
                 </ul>
             </nav>
         </div>
@@ -100,6 +123,7 @@
                 </a>
             </h1>
         </div>
+
 <!--The end of the side menu        -->
 
 <!-- Page content -->

@@ -493,9 +493,11 @@ body {
 }
 
 .sidebar-nav p {
+    margin: 50px;
+    margin-bottom: 10px;
     color: #999999;
     font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .post-box {
