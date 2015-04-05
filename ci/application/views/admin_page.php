@@ -84,9 +84,8 @@
                 <ul class="sidebar-nav nav">
 
                    <div id = "textbox"> <textarea type="textarea" name="message" placeholder="What do you want to post?" class="post-box"></textarea> </div>
-                    <!--</li>
                     <hr>
-                    <li>
+                    <!--<li>
                         <p>Facebook</p>
                     </li>
                     <li>
@@ -98,14 +97,28 @@
                     <li>
                         <p>LinkedIn</p>
                     </li>-->
-
-
-                    <form action="">
-                        <p><input type="checkbox" value="facebook"> Facebook<br></p>
-                        <p><input type="checkbox" value="twitter" > Twitter<br></p>
-                        <p><input type="checkbox" value="instagram"> Instagram<br></p>
-                        <p><input type="checkbox" value="linkein" >LinkedIn<br></p>
-                    </form>
+                    <div class="col-md-6">
+                        <div class="funkyradio">
+                            <div class="funkyradio-default">
+                                <input type="checkbox" name="checkbox" id="checkbox1" checked/>
+                                <label for="checkbox1">Facebook</label>
+                            </div>
+                            <div class="funkyradio-primary">
+                                <input type="checkbox" name="checkbox" id="checkbox2" checked/>
+                                <label for="checkbox2">Twitter</label>
+                            </div>
+                            <div class="funkyradio-success">
+                                <input type="checkbox" name="checkbox" id="checkbox3" checked/>
+                                <label for="checkbox3">LinkedIn</label>
+                            </div>
+                        </div>
+                    </div>
+<!--                    <form action="">-->
+<!--                        <p><input type="checkbox" value="facebook"> Facebook<br></p>-->
+<!--                        <p><input type="checkbox" value="twitter" > Twitter<br></p>-->
+<!--                        <p><input type="checkbox" value="instagram"> Instagram<br></p>-->
+<!--                        <p><input type="checkbox" value="linkein" >LinkedIn<br></p>-->
+<!--                    </form>-->
                 </ul>
             </nav>
         </div>
