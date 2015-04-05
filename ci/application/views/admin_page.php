@@ -3,22 +3,15 @@
     <title>SocialPlaza | Admin Page</title>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
     <!--		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>-->
-<!--    <link rel="stylesheet" type="text/css" href="--><?php //echo base_url();?><!--css/user.css">-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/user.css">
     <link href="<?php echo base_url();?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>css/grayscale.css" rel="stylesheet">
+    <script src="<?php echo base_url();?>js/side_menu.js"></script>
     <!--        <script src="--><?php //echo base_url();?><!--js/slider.js"></script>-->
 </head>
 
-<!--<div id="profile">-->
-<!--    --><?php
-//    echo "Hello <b id='welcome'><i>" . $session['name'] . "</i> !</b>";
-//    ?>
-<!--    <b id="logout"><a href="logout">Logout</a></b>-->
-<!--</div>-->
-
 <body id="page-top" data-target=".navbar-fixed-top">
-
-    <!-- Navigation -->
+<!-- Navigation menu bar, css - grayscale.css-->
     <nav class="navbar navbar-custom navbar-fixed-top top-nav-collapse" role="navigation">
         <div class="container">
 
@@ -72,21 +65,95 @@
         </div>
         <!-- /.container -->
     </nav>
+<!-- The end of the menu bar -->
+<!--Side menu, css - grayscale.css, js - slider.js-->
+    <div id="wrapper">
+
+<!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <nav id="spy">
+                <ul class="sidebar-nav nav">
+                    <hr>
+                    <li>
+                        <textarea type="textarea" name="message" placeholder="What do you want to post?" class="post-box"></textarea>
+                    </li>
+                    <hr>
+                    <li>
+                        <p>Facebook</p>
+                    </li>
+                    <li>
+                        <p>Twitter</p>
+                    </li>
+                    <li>
+                        <p>Instagram</p>
+                    </li>
+                    <li>
+                        <p>LinkedIn</p>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content-header">
+            <h1 id="home">
+                <a id="menu-toggle" href="#" class="glyphicon glyphicon-align-justify btn-menu toggle">
+                    post<i class="fa fa-bars"></i>
+                </a>
+            </h1>
+        </div>
+<!--The end of the side menu        -->
+
+<!-- Page content -->
+        <div id="page-content-wrapper">
+            <div class="page-content inset" data-spy="scroll" data-target="#spy">
+                <div class="row">
+
+                    <div class="jumbotron text-center" >
+                        <h1>Hello <?php echo $session['name'];?>!</h1>
+                        <p>Welcome to SocialPlaza!</p>
+                        <!--                    <p><a class="btn btn-default">Click On Me!</a>-->
+                        <!--                        <a class="btn btn-info">Tweet Me!</a></p>-->
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12 well">
+                        <legend id="anch1"><a href="<?php echo base_url();?>facebook">Facebook</a></legend>
+                    </div>
+                    <div class="col-md-12 well">
+                        <legend id="anch2"><a href="<?php echo base_url();?>twitter">Twitter</a></legend>
+                    </div>
+                    <div class="col-md-12 well">
+                        <legend id="anch3"><a href="<?php echo base_url();?>instagram">Instagram</a></legend>
+                    </div>
+                    <div class="col-md-12 well">
+                        <legend id="anch4"><a href="<?php echo base_url();?>linkedin">LinkedIn</a></legend>
+                    </div>
+                </div>
+
+                <div class="navbar navbar-default navbar-static-bottom">
+                    <p class="navbar-text pull-left">
+<!--                    <div id="socialmedia_wrapper">-->
+                        <a href="<?php echo base_url();?>twitter"><img class="icon" src="<?php echo base_url();?>img/twitter.png"/></a>
+                        <a href="<?php echo base_url();?>instagram"><img class="icon" src="<?php echo base_url();?>img/instagram.png"/></a>
+                        <a href="<?php echo base_url();?>tumblr"><img class="icon" src="<?php echo base_url();?>img/linkedin.png"/></a>
+                        <a href="<?php echo base_url();?>youtube"><img class="icon" src="<?php echo base_url();?>img/youtube.png"/></a>
+                        <a href="<?php echo base_url();?>facebook"><img class="icon" src="<?php echo base_url();?>img/facebook.png"/></a>
+<!--                    </div>-->
+                    </p>
+                </div>
+                <a href="<?php echo base_url();?>emails"><img class="icon" src="<?php echo base_url();?>img/email.png"/></a>
+            </div>
 
 
-    <div id="socialmedia_wrapper">
-        <a href="<?php echo base_url();?>twitter"><img class="icon" src="<?php echo base_url();?>img/twitter.png"/></a>
-        <a href="<?php echo base_url();?>instagram"><img class="icon" src="<?php echo base_url();?>img/instagram.png"/></a>
-        <a href="<?php echo base_url();?>tumblr"><img class="icon" src="<?php echo base_url();?>img/linkedin.png"/></a>
-        <a href="<?php echo base_url();?>youtube"><img class="icon" src="<?php echo base_url();?>img/youtube.png"/></a>
-        <a href="<?php echo base_url();?>facebook"><img class="icon" src="<?php echo base_url();?>img/facebook.png"/></a>
+        </div>
+
     </div>
 
-    <a href="<?php echo base_url();?>emails"><img class="icon" src="<?php echo base_url();?>img/email.png"/></a>
 
-    <script src="<?php echo base_url();?>js/jquery.js"></script>
+        <script src="<?php echo base_url();?>js/jquery.js"></script>
         <script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
         <script src="<?php echo base_url();?>js/jquery.easing.min.js"></script>
         <script src="<?php echo base_url();?>js/slider.js"></script>
+        <script src="<?php echo base_url();?>js/side_menu.js"></script>
     </body>
 </html>
