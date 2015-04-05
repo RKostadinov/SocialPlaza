@@ -75,6 +75,7 @@
     </nav>
 <!-- The end of the menu bar -->
 <!--Side menu, css - grayscale.css, js - slider.js-->
+
     <div id="wrapper">
 
 <!-- Sidebar -->
@@ -82,7 +83,7 @@
             <nav id="spy">
                 <ul class="sidebar-nav nav">
 
-                        <textarea type="textarea" name="message" placeholder="What do you want to post?" class="post-box"></textarea>
+                   <div id = "textbox"> <textarea type="textarea" name="message" placeholder="What do you want to post?" class="post-box"></textarea> </div>
                     <!--</li>
                     <hr>
                     <li>
@@ -97,16 +98,8 @@
                     <li>
                         <p>LinkedIn</p>
                     </li>-->
-<!--
-                    <div id="check">
-                        <form action="demo_form.asp" method="get">
-                           <p> <input type="checkbox" name="vehicle" value="facebook"> Facebook<br></p>
-                            <p><input type="checkbox" name="vehicle" value="twitter" checked> Twitter<br></p>
-                            <p><input type="checkbox" name="vehicle" value="instagram"> Instagram<br></p>
-                            <p><input type="checkbox" name="vehicle" value="linkein" checked>LinkedIn<br></p>
-                        </form>
 
--->
+
                     <form action="">
                         <p><input type="checkbox" value="facebook"> Facebook<br></p>
                         <p><input type="checkbox" value="twitter" > Twitter<br></p>

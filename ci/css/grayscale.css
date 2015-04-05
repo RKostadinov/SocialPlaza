@@ -470,6 +470,9 @@ body {
     z-index: 1000;
     transition: all 0.4s ease 0s;
 }
+#textbox {
+ padding: 30;
+}
 
 #wrapper.active {
     padding-left: 0;
