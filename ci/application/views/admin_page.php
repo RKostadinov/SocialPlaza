@@ -16,77 +16,30 @@
         }
     </style>
 
-    <script type="text/javascript">
-
-        /***********************************************
-         * Dynamic Ajax Content- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
-         * This notice MUST stay intact for legal use
-         * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
-         ***********************************************/
-
-        var bustcachevar=1 //bust potential caching of external pages after initial request? (1=yes, 0=no)
-        var loadedobjects=""
-        var rootdomain="http://"+window.location.hostname
-        var bustcacheparameter=""
-
-        function ajaxpage(url, containerid){
-            var page_request = false
-            if (window.XMLHttpRequest) // if Mozilla, Safari etc
-                page_request = new XMLHttpRequest()
-            else if (window.ActiveXObject){ // if IE
-                try {
-                    page_request = new ActiveXObject("Msxml2.XMLHTTP")
-                }
-                catch (e){
-                    try{
-                        page_request = new ActiveXObject("Microsoft.XMLHTTP")
-                    }
-                    catch (e){}
-                }
+    <script>
+        function load_feed(page_url,place)
+        {
+            var xmlhttp;
+            if (window.XMLHttpRequest)
+            {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp=new XMLHttpRequest();
             }
             else
-                return false
-            page_request.onreadystatechange=function(){
-                loadpage(page_request, containerid)
+            {// code for IE6, IE5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
             }
-            if (bustcachevar) //if bust caching of external page
-                bustcacheparameter=(url.indexOf("?")!=-1)? "&"+new Date().getTime() : "?"+new Date().getTime()
-            page_request.open('GET', url+bustcacheparameter, true)
-            page_request.send(null)
-        }
-
-        function loadpage(page_request, containerid){
-            if (page_request.readyState == 4 && (page_request.status==200 || window.location.href.indexOf("http")==-1))
-                document.getElementById(containerid).innerHTML=page_request.responseText
-        }
-
-        function loadobjs(){
-            if (!document.getElementById)
-                return
-            for (i=0; i<arguments.length; i++){
-                var file=arguments[i]
-                var fileref=""
-                if (loadedobjects.indexOf(file)==-1){ //Check to see if this object has not already been added to page before proceeding
-                    if (file.indexOf(".js")!=-1){ //If object is a js file
-                        fileref=document.createElement('script')
-                        fileref.setAttribute("type","text/javascript");
-                        fileref.setAttribute("src", file);
-                    }
-                    else if (file.indexOf(".css")!=-1){ //If object is a css file
-                        fileref=document.createElement("link")
-                        fileref.setAttribute("rel", "stylesheet");
-                        fileref.setAttribute("type", "text/css");
-                        fileref.setAttribute("href", file);
-                    }
-                }
-                if (fileref!=""){
-                    document.getElementsByTagName("head").item(0).appendChild(fileref)
-                    loadedobjects+=file+" " //Remember this object as being already added to page
+            xmlhttp.onreadystatechange=function()
+            {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                    document.getElementById(place).innerHTML=xmlhttp.responseText;
                 }
             }
+            xmlhttp.open("GET",page_url,true);
+            xmlhttp.send();
         }
-
     </script>
+
 
 </head>
 
@@ -153,39 +106,27 @@
         <div id="sidebar-wrapper">
             <nav id="spy">
                 <ul class="sidebar-nav nav">
-                   <div id = "textbox">
+                    <div id = "textbox">
                        <textarea type="textarea" name="message" placeholder="What do you want to post?" class="post-box"></textarea>
-                   </div>
+                    </div>
                     <hr>
-                    <!--<li>
-                        <p>Facebook</p>
-                    </li>
-                    <li>
-                        <p>Twitter</p>
-                    </li>
-                    <li>
-                        <p>Instagram</p>
-                    </li>
-                    <li>
-                        <p>LinkedIn</p>
-                    </li>-->
-                    <div class="col-md-6">
-                        <div class="funkyradio">
-                            <div class="funkyradio-default">
-                                <input type="checkbox" name="facebook" id="checkbox1" />
-                                <label for="checkbox1">Facebook</label>
-                            </div>
-                            <div class="funkyradio-primary">
-                                <input type="checkbox" name="twitter" id="checkbox2" />
-                                <label for="checkbox2">Twitter</label>
-                            </div>
-                            <div class="funkyradio-success">
-                                <input type="checkbox" name="checkbox" id="checkbox3"/>
-                                <label for="checkbox3">LinkedIn</label>
+                        <div class="col-md-6">
+                            <div class="funkyradio">
+                                <div class="funkyradio-default">
+                                    <input type="checkbox" name="facebook" id="checkbox1" />
+                                    <label for="checkbox1">Facebook</label>
+                                </div>
+                                <div class="funkyradio-primary">
+                                    <input type="checkbox" name="twitter" id="checkbox2" />
+                                    <label for="checkbox2">Twitter</label>
+                                </div>
+                                <div class="funkyradio-success">
+                                    <input type="checkbox" name="checkbox" id="checkbox3"/>
+                                    <label for="checkbox3">LinkedIn</label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </ul>
+                    </ul>
             </nav>
         </div>
         <div class="content-header">
@@ -213,25 +154,19 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 well">
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                            <!-- Wrapper for slides -->
-
-                            <!-- End Carousel Inner -->
-
-                        </div>
-
                         <legend id="anch1"><a href="<?php echo base_url();?>facebook">Facebook</a></legend>
-                            <a href="javascript:ajaxpage('http://localhost/ci/facebook', 'contentarea');">Open Facebook Feed</a>
-                        <div id="contentarea"></div>
-
+                        <a href="#" onclick="load_feed('http://localhost/ci/facebook','myDiv1')">Open Facebook Feed</a>
+                        <div id="myDiv1"></div>
                     </div>
                     <div class="col-md-12 well">
                         <legend id="anch2"><a href="<?php echo base_url();?>twitter">Twitter</a></legend>
-                        <a href="javascript:ajaxpage('http://localhost/ci/twitter', 'contentarea');">  Open Twitter Feed</a>
+                        <a href="#" onclick="load_feed('http://localhost/ci/twitter','myDiv2')">Open Twitter Feed</a>
+                        <div id="myDiv2"></div>
                     </div>
                     <div class="col-md-12 well">
                         <legend id="anch3"><a href="<?php echo base_url();?>instagram">Instagram</a></legend>
-                        <a href="javascript:ajaxpage('http://localhost/ci/instagram', 'contentarea');">  Open Instagram Feed</a>
+                        <a href="#" onclick="load_feed('http://localhost/ci/instagram','myDiv3')">Open Instagram Feed</a>
+                        <div id="myDiv3"></div>
                     </div>
                     <div class="col-md-12 well">
                         <legend id="anch4"><a href="<?php echo base_url();?>linkedin">LinkedIn</a></legend>
