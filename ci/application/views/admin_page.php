@@ -7,7 +7,7 @@
     <link href="<?php echo base_url();?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>css/grayscale.css" rel="stylesheet">
     <script src="<?php echo base_url();?>js/side_menu.js"></script>
-    <!--        <script src="--><?php //echo base_url();?><!--js/slider.js"></script>-->
+        <!--        <script src="--><?php //echo base_url();?><!--js/slider.js"></script>-->
 
     <style>
         input:checked {
@@ -76,14 +76,14 @@
 <!-- The end of the menu bar -->
 <!--Side menu, css - grayscale.css, js - slider.js-->
 
-    <div id="wrapper">
-
+    <div id="wrapper" class="active">
 <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <nav id="spy">
                 <ul class="sidebar-nav nav">
-
-                   <div id = "textbox"> <textarea type="textarea" name="message" placeholder="What do you want to post?" class="post-box"></textarea> </div>
+                   <div id = "textbox">
+                       <textarea type="textarea" name="message" placeholder="What do you want to post?" class="post-box"></textarea>
+                   </div>
                     <hr>
                     <!--<li>
                         <p>Facebook</p>
@@ -100,32 +100,26 @@
                     <div class="col-md-6">
                         <div class="funkyradio">
                             <div class="funkyradio-default">
-                                <input type="checkbox" name="checkbox" id="checkbox1" checked/>
+                                <input type="checkbox" name="facebook" id="checkbox1" />
                                 <label for="checkbox1">Facebook</label>
                             </div>
                             <div class="funkyradio-primary">
-                                <input type="checkbox" name="checkbox" id="checkbox2" checked/>
+                                <input type="checkbox" name="twitter" id="checkbox2" />
                                 <label for="checkbox2">Twitter</label>
                             </div>
                             <div class="funkyradio-success">
-                                <input type="checkbox" name="checkbox" id="checkbox3" checked/>
+                                <input type="checkbox" name="checkbox" id="checkbox3"/>
                                 <label for="checkbox3">LinkedIn</label>
                             </div>
                         </div>
                     </div>
-<!--                    <form action="">-->
-<!--                        <p><input type="checkbox" value="facebook"> Facebook<br></p>-->
-<!--                        <p><input type="checkbox" value="twitter" > Twitter<br></p>-->
-<!--                        <p><input type="checkbox" value="instagram"> Instagram<br></p>-->
-<!--                        <p><input type="checkbox" value="linkein" >LinkedIn<br></p>-->
-<!--                    </form>-->
                 </ul>
             </nav>
         </div>
         <div class="content-header">
             <h1 id="home">
                 <a id="menu-toggle" href="#" class="glyphicon glyphicon-align-justify btn-menu toggle">
-                    post<i class="fa fa-bars"></i>
+                   <i class="fa fa-bars"></i>
                 </a>
             </h1>
         </div>
@@ -202,8 +196,7 @@
                             </div>
                             <!-- End Carousel Inner -->
                             <ul class="nav nav-pills nav-justified">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">About<small>Lorem
-                                            ipsum dolor sit</small></a></li>
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">Facebook<small></small></a></li>
                                 <li data-target="#myCarousel" data-slide-to="1"><a href="#">Projects<small>Lorem ipsum
                                             dolor sit</small></a></li>
                                 <li data-target="#myCarousel" data-slide-to="2"><a href="#">Portfolio<small>Lorem ipsum
@@ -240,7 +233,7 @@
 <!--                    </div>-->
                     </p>
                 </div>
-                <a href="<?php echo base_url();?>emails"><img class="icon" src="<?php echo base_url();?>img/email.png"/></a>
+<!--                <a href="--><?php //echo base_url();?><!--emails"><img class="icon" src="--><?php //echo base_url();?><!--img/email.png"/></a>-->
             </div>
 
 

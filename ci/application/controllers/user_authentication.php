@@ -30,7 +30,7 @@ Class User_Authentication extends CI_Controller {
 		$this->form_validation->set_rules('first_name', 'First Name', 'trim|required|xss_clean');
         $this->form_validation->set_rules('last_name', 'Last Name', 'trim|required|xss_clean');
         $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('email_value', 'Email', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('email_value', 'Email', 'trim|required|xss_clean|valid_email');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|matches[password_confirmation]|md5');
         $this->form_validation->set_rules('password_confirmation', 'Password Confirmation', 'trim|required|xss_clean');
 
