@@ -16,6 +16,78 @@
         }
     </style>
 
+    <script type="text/javascript">
+
+        /***********************************************
+         * Dynamic Ajax Content- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
+         * This notice MUST stay intact for legal use
+         * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+         ***********************************************/
+
+        var bustcachevar=1 //bust potential caching of external pages after initial request? (1=yes, 0=no)
+        var loadedobjects=""
+        var rootdomain="http://"+window.location.hostname
+        var bustcacheparameter=""
+
+        function ajaxpage(url, containerid){
+            var page_request = false
+            if (window.XMLHttpRequest) // if Mozilla, Safari etc
+                page_request = new XMLHttpRequest()
+            else if (window.ActiveXObject){ // if IE
+                try {
+                    page_request = new ActiveXObject("Msxml2.XMLHTTP")
+                }
+                catch (e){
+                    try{
+                        page_request = new ActiveXObject("Microsoft.XMLHTTP")
+                    }
+                    catch (e){}
+                }
+            }
+            else
+                return false
+            page_request.onreadystatechange=function(){
+                loadpage(page_request, containerid)
+            }
+            if (bustcachevar) //if bust caching of external page
+                bustcacheparameter=(url.indexOf("?")!=-1)? "&"+new Date().getTime() : "?"+new Date().getTime()
+            page_request.open('GET', url+bustcacheparameter, true)
+            page_request.send(null)
+        }
+
+        function loadpage(page_request, containerid){
+            if (page_request.readyState == 4 && (page_request.status==200 || window.location.href.indexOf("http")==-1))
+                document.getElementById(containerid).innerHTML=page_request.responseText
+        }
+
+        function loadobjs(){
+            if (!document.getElementById)
+                return
+            for (i=0; i<arguments.length; i++){
+                var file=arguments[i]
+                var fileref=""
+                if (loadedobjects.indexOf(file)==-1){ //Check to see if this object has not already been added to page before proceeding
+                    if (file.indexOf(".js")!=-1){ //If object is a js file
+                        fileref=document.createElement('script')
+                        fileref.setAttribute("type","text/javascript");
+                        fileref.setAttribute("src", file);
+                    }
+                    else if (file.indexOf(".css")!=-1){ //If object is a css file
+                        fileref=document.createElement("link")
+                        fileref.setAttribute("rel", "stylesheet");
+                        fileref.setAttribute("type", "text/css");
+                        fileref.setAttribute("href", file);
+                    }
+                }
+                if (fileref!=""){
+                    document.getElementsByTagName("head").item(0).appendChild(fileref)
+                    loadedobjects+=file+" " //Remember this object as being already added to page
+                }
+            }
+        }
+
+    </script>
+
 </head>
 
 <body id="page-top" data-target=".navbar-fixed-top">
@@ -143,79 +215,23 @@
                     <div class="col-md-12 well">
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                             <!-- Wrapper for slides -->
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <iframe width="100%" height="350px" frameborder="none" src="http://localhost/ci/facebook_process/login"> name="iframe_a"></iframe>
-<!--                                    <img src="http://placehold.it/1200x400/16a085/ffffff&text=About Us">-->
-<!--                                    <div class="carousel-caption">-->
-<!--                                        <h3>-->
-<!--                                            Headline</h3>-->
-<!--                                        <p>-->
-<!--                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod-->
-<!--                                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem-->
-<!--                                            ipsum dolor sit amet, consetetur sadipscing elitr.</p>-->
-<!--                                    </div>-->
-                                </div>
-                                <!-- End Item -->
-                                <div class="item">
-                                    <img src="http://placehold.it/1200x400/e67e22/ffffff&text=Projects">
-                                    <div class="carousel-caption">
-                                        <h3>
-                                            Headline</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem
-                                            ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-                                    </div>
-                                </div>
-                                <!-- End Item -->
-                                <div class="item">
-                                    <img src="http://placehold.it/1200x400/2980b9/ffffff&text=Portfolio">
-                                    <div class="carousel-caption">
-                                        <h3>
-                                            Headline</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem
-                                            ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-                                    </div>
-                                </div>
-                                <!-- End Item -->
-                                <div class="item">
-                                    <img src="http://placehold.it/1200x400/8e44ad/ffffff&text=Services">
-                                    <div class="carousel-caption">
-                                        <h3>
-                                            Headline</h3>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem
-                                            ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-                                    </div>
-                                </div>
-                                <!-- End Item -->
-                            </div>
+
                             <!-- End Carousel Inner -->
-                            <ul class="nav nav-pills nav-justified">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">Facebook<small></small></a></li>
-                                <li data-target="#myCarousel" data-slide-to="1"><a href="#">Projects<small>Lorem ipsum
-                                            dolor sit</small></a></li>
-                                <li data-target="#myCarousel" data-slide-to="2"><a href="#">Portfolio<small>Lorem ipsum
-                                            dolor sit</small></a></li>
-                                <li data-target="#myCarousel" data-slide-to="3"><a href="#">Services<small>Lorem ipsum
-                                            dolor sit</small></a></li>
-                            </ul>
+
                         </div>
 
                         <legend id="anch1"><a href="<?php echo base_url();?>facebook">Facebook</a></legend>
-                        <iframe width="100%" height="350px" frameborder="none" src="http://localhost/ci/facebook_process/login"> name="iframe_a"></iframe>
+                            <a href="javascript:ajaxpage('http://localhost/ci/facebook', 'contentarea');">Open Facebook Feed</a>
+                        <div id="contentarea"></div>
+
                     </div>
                     <div class="col-md-12 well">
                         <legend id="anch2"><a href="<?php echo base_url();?>twitter">Twitter</a></legend>
-                        <iframe width="100%" height="350px" frameborder="none" src="http://localhost/ci/twitter"> name="iframe_a"></iframe>
+                        <a href="javascript:ajaxpage('http://localhost/ci/twitter', 'contentarea');">  Open Twitter Feed</a>
                     </div>
                     <div class="col-md-12 well">
                         <legend id="anch3"><a href="<?php echo base_url();?>instagram">Instagram</a></legend>
-                        <iframe width="100%" height="350px" frameborder="none" src="http://localhost/ci/welcome"> name="iframe_a"></iframe>
+                        <a href="javascript:ajaxpage('http://localhost/ci/instagram', 'contentarea');">  Open Instagram Feed</a>
                     </div>
                     <div class="col-md-12 well">
                         <legend id="anch4"><a href="<?php echo base_url();?>linkedin">LinkedIn</a></legend>
