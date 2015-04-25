@@ -105,28 +105,33 @@
 <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <nav id="spy">
-                <ul class="sidebar-nav nav">
-                    <div id = "textbox">
-                       <textarea type="textarea" name="message" placeholder="What do you want to post?" class="post-box"></textarea>
-                    </div>
-                    <hr>
-                        <div class="col-md-6">
-                            <div class="funkyradio">
-                                <div class="funkyradio-default">
-                                    <input type="checkbox" name="facebook" id="checkbox1" />
-                                    <label for="checkbox1">Facebook</label>
-                                </div>
-                                <div class="funkyradio-primary">
-                                    <input type="checkbox" name="twitter" id="checkbox2" />
-                                    <label for="checkbox2">Twitter</label>
-                                </div>
-                                <div class="funkyradio-success">
-                                    <input type="checkbox" name="checkbox" id="checkbox3"/>
-                                    <label for="checkbox3">LinkedIn</label>
+<!--                <ul class="nav">-->
+<!--                    <li>-->
+                        <div id = "textbox">
+                           <textarea type="textarea" name="message" placeholder="What do you want to post?" class="post-box"></textarea>
+                        </div>
+                        <hr>
+                            <div class="col-md-6">
+                                <div class="funkyradio">
+                                    <div class="funkyradio-default">
+                                        <input type="checkbox" name="facebook" id="checkbox1" />
+                                        <label for="checkbox1">Facebook</label>
+                                    </div>
+                                    <div class="funkyradio-primary">
+                                        <input type="checkbox" name="twitter" id="checkbox2" />
+                                        <label for="checkbox2">Twitter</label>
+                                    </div>
+                                    <div class="funkyradio-success">
+                                        <input type="checkbox" name="checkbox" id="checkbox3"/>
+                                        <label for="checkbox3">LinkedIn</label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </ul>
+<!--                    </li>-->
+<!--                    <li>-->
+                        <button class="btn btn-lg btn-primary btn-block post_button" type="submit">Post</button>
+<!--                    </li>-->
+<!--                </ul>-->
             </nav>
         </div>
         <div class="content-header">
@@ -140,18 +145,27 @@
 <!--The end of the side menu        -->
 
 <!-- Page content -->
+        <section id="download" class="text-center">
+            <div class="download-section">
+                <div class="container">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h1>Welcome <?php echo $session['name'];?>!</h1>
+                        <p>Social life - better life!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         <div id="page-content-wrapper">
             <div class="page-content inset" data-spy="scroll" data-target="#spy">
-                <div class="row">
-
-                    <div class="jumbotron text-center" >
-                        <h1>Hello <?php echo $session['name'];?>!</h1>
-                        <p>Welcome to SocialPlaza!</p>
-                        <!--                    <p><a class="btn btn-default">Click On Me!</a>-->
-                        <!--                        <a class="btn btn-info">Tweet Me!</a></p>-->
-                    </div>
-
-                </div>
+<!--                <div class="row">-->
+<!---->
+<!--                    <div class="jumbotron text-center" >-->
+<!--                        <h1>Hello --><?php //echo $session['name'];?><!--!</h1>-->
+<!--                        <p>Welcome to SocialPlaza!</p>-->
+<!--                                          <p><a class="btn btn-default">Click On Me!</a>-->
+<!--                                              <a class="btn btn-info">Tweet Me!</a></p>-->
+<!--                    </div>-->
+<!--                </div>-->
                 <div class="row">
                     <div class="col-md-12 well">
                         <legend id="anch1"><a href="<?php echo base_url();?>facebook">Facebook</a></legend>

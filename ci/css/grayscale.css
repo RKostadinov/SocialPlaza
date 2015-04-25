@@ -236,6 +236,12 @@ a:focus {
     -moz-animation-timing-function: linear;
 }
 
+.post_button {
+    /*position:fixed;*/
+    bottom:0px;
+    width:100%;
+}
+
 @-webkit-keyframes pulse {    
     0 {
         -webkit-transform: scale(1);
@@ -687,7 +693,7 @@ body {
     background-color: #ccc;
 }
 .funkyradio input[type="radio"]:checked ~ label, .funkyradio input[type="checkbox"]:checked ~ label {
-    color: #777;
+    color: #fff;
 }
 .funkyradio input[type="radio"]:focus ~ label:before, .funkyradio input[type="checkbox"]:focus ~ label:before {
     box-shadow: 0 0 0 3px #999;
