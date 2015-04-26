@@ -738,7 +738,8 @@ body {
 {
     border-radius: 0px;
 }
-.nav-pills>li[data-slide-to="0"].active a { background-color: #16a085; }
-.nav-pills>li[data-slide-to="1"].active a { background-color: #e67e22; }
-.nav-pills>li[data-slide-to="2"].active a { background-color: #2980b9; }
-.nav-pills>li[data-slide-to="3"].active a { background-color: #8e44ad; }
+.nav-pills>li[data-slide-to="0"].active a { background-color: #3f5c9a; }
+.nav-pills>li[data-slide-to="1"].active a { background-color: #55acee; }
+.nav-pills>li[data-slide-to="2"].active a { background-color: #b57b5d; }
+.nav-pills>li[data-slide-to="3"].active a { background-color: #1b86bc; }
+.nav-pills>li[data-slide-to="4"].active a { background-color: #16a085; }

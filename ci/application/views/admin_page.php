@@ -1,9 +1,9 @@
 <html>
 <head>
-    <title>SocialPlaza | Admin Page</title>
+    <title>SocialPlaza | Feed and post</title>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
     <!--		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>-->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/user.css">
+<!--    <link rel="stylesheet" type="text/css" href="--><?php //echo base_url();?><!--css/user.css">-->
     <link href="<?php echo base_url();?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>css/grayscale.css" rel="stylesheet">
     <script src="<?php echo base_url();?>js/side_menu.js"></script>
@@ -91,8 +91,6 @@
                     </li>
                 </ul>
 <!--                        <a class="page-scroll" href="#contact">Contact</a>-->
-                    </li>
-                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -157,49 +155,56 @@
         </section>
         <div id="page-content-wrapper">
             <div class="page-content inset" data-spy="scroll" data-target="#spy">
-<!--                <div class="row">-->
-<!---->
-<!--                    <div class="jumbotron text-center" >-->
-<!--                        <h1>Hello --><?php //echo $session['name'];?><!--!</h1>-->
-<!--                        <p>Welcome to SocialPlaza!</p>-->
-<!--                                          <p><a class="btn btn-default">Click On Me!</a>-->
-<!--                                              <a class="btn btn-info">Tweet Me!</a></p>-->
-<!--                    </div>-->
-<!--                </div>-->
                 <div class="row">
-                    <div class="col-md-12 well">
-                        <legend id="anch1"><a href="<?php echo base_url();?>facebook">Facebook</a></legend>
-                        <a href="#" onclick="load_feed('http://localhost/ci/facebook','myDiv1')">Open Facebook Feed</a>
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <ul class="nav nav-pills nav-justified">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#" onclick="load_feed('http://localhost/ci/facebook','myDiv1')">Facebook</a></li>
+                            <li data-target="#myCarousel" data-slide-to="1"><a href="#" onclick="load_feed('http://localhost/ci/twitter','myDiv1')">Twitter</a></li>
+                            <li data-target="#myCarousel" data-slide-to="2"><a href="#" onclick="load_feed('http://localhost/ci/instagram','myDiv1')">Instagram</a></li>
+                            <li data-target="#myCarousel" data-slide-to="3"><a href="#">LinkedIn</a></li>
+                            <li data-target="#myCarousel" data-slide-to="4"><a href="#">+</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row well">
+                    <div class="item active">
                         <div id="myDiv1"></div>
                     </div>
-                    <div class="col-md-12 well">
-                        <legend id="anch2"><a href="<?php echo base_url();?>twitter">Twitter</a></legend>
-                        <a href="#" onclick="load_feed('http://localhost/ci/twitter','myDiv2')">Open Twitter Feed</a>
-                        <div id="myDiv2"></div>
-                    </div>
-                    <div class="col-md-12 well">
-                        <legend id="anch3"><a href="<?php echo base_url();?>instagram">Instagram</a></legend>
-                        <a href="#" onclick="load_feed('http://localhost/ci/instagram','myDiv3')">Open Instagram Feed</a>
-                        <div id="myDiv3"></div>
-                    </div>
-                    <div class="col-md-12 well">
-                        <legend id="anch4"><a href="<?php echo base_url();?>linkedin">LinkedIn</a></legend>
-                    </div>
                 </div>
-
-                <div class="navbar navbar-default navbar-static-bottom">
-                    <p class="navbar-text pull-left">
-<!--                    <div id="socialmedia_wrapper">-->
-                        <a href="<?php echo base_url();?>twitter"><img class="icon" src="<?php echo base_url();?>img/twitter.png"/></a>
-                        <a href="<?php echo base_url();?>instagram"><img class="icon" src="<?php echo base_url();?>img/instagram.png"/></a>
-                        <a href="<?php echo base_url();?>tumblr"><img class="icon" src="<?php echo base_url();?>img/linkedin.png"/></a>
-                        <a href="<?php echo base_url();?>youtube"><img class="icon" src="<?php echo base_url();?>img/youtube.png"/></a>
-                        <a href="<?php echo base_url();?>facebook"><img class="icon" src="<?php echo base_url();?>img/facebook.png"/></a>
+<!--                <div class="row">-->
+<!--                    <div class="col-md-12 well">-->
+<!--                        <legend id="anch1"><a href="--><?php //echo base_url();?><!--facebook">Facebook</a></legend>-->
+<!--                        <a href="#" onclick="load_feed('http://localhost/ci/facebook','myDiv1')">Open Facebook Feed</a>-->
+<!--                        <div id="myDiv1"></div>-->
 <!--                    </div>-->
-                    </p>
-                </div>
+<!--                    <div class="col-md-12 well">-->
+<!--                        <legend id="anch2"><a href="--><?php //echo base_url();?><!--twitter">Twitter</a></legend>-->
+<!--                        <a href="#" onclick="load_feed('http://localhost/ci/twitter','myDiv2')">Open Twitter Feed</a>-->
+<!--                        <div id="myDiv2"></div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-12 well">-->
+<!--                        <legend id="anch3"><a href="--><?php //echo base_url();?><!--instagram">Instagram</a></legend>-->
+<!--                        <a href="#" onclick="load_feed('http://localhost/ci/instagram','myDiv3')">Open Instagram Feed</a>-->
+<!--                        <div id="myDiv3"></div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-12 well">-->
+<!--                        <legend id="anch4"><a href="--><?php //echo base_url();?><!--linkedin">LinkedIn</a></legend>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="navbar navbar-default navbar-static-bottom">-->
+<!--                    <p class="navbar-text pull-left">-->
+<!--                    <div id="socialmedia_wrapper">-->
+<!--                        <a href="--><?php //echo base_url();?><!--twitter"><img class="icon" src="--><?php //echo base_url();?><!--img/twitter.png"/></a>-->
+<!--                        <a href="--><?php //echo base_url();?><!--instagram"><img class="icon" src="--><?php //echo base_url();?><!--img/instagram.png"/></a>-->
+<!--                        <a href="--><?php //echo base_url();?><!--tumblr"><img class="icon" src="--><?php //echo base_url();?><!--img/linkedin.png"/></a>-->
+<!--                        <a href="--><?php //echo base_url();?><!--youtube"><img class="icon" src="--><?php //echo base_url();?><!--img/youtube.png"/></a>-->
+<!--                        <a href="--><?php //echo base_url();?><!--facebook"><img class="icon" src="--><?php //echo base_url();?><!--img/facebook.png"/></a>-->
+<!--                    </div>-->
+<!--                    </p>-->
+<!--                </div>-->
 <!--                <a href="--><?php //echo base_url();?><!--emails"><img class="icon" src="--><?php //echo base_url();?><!--img/email.png"/></a>-->
-            </div>
+<!--            </div>-->
 
 
         </div>
