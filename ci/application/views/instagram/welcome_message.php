@@ -1,7 +1,6 @@
 <div class="container">
     <div class="starter-template">
-		<h1>CodeIgniter 3.0 Instagram API Library</h1>
-			<p>This CodeIgniter library provides all the functionality to interact with the Instagram API. <?php echo anchor('https://github.com/suhindra/CodeIgniter3-Instagram-API', 'Download from Github'); ?>.</p>
+        <?php echo anchor($this->instagram_api->instagram_login(), 'Instagram Login'); ?>
 	</div>
 </div>
 <section>
