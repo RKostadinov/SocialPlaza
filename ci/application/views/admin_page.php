@@ -2,12 +2,8 @@
 <head>
     <title>SocialPlaza | Feed and post</title>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
-    <!--		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>-->
-<!--    <link rel="stylesheet" type="text/css" href="--><?php //echo base_url();?><!--css/user.css">-->
     <link href="<?php echo base_url();?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>css/grayscale.css" rel="stylesheet">
-    <script src="<?php echo base_url();?>js/side_menu.js"></script>
-        <!--        <script src="--><?php //echo base_url();?><!--js/slider.js"></script>-->
 
     <style>
         input:checked {
@@ -79,7 +75,7 @@
                             <li class="col-sm-3">
                                 <ul>
                                     <li class="dropdown-header">User</li>
-                                    <li><a href="payment.html">Payment</a></li>
+                                    <li><a href="<?php echo base_url(); ?>user_authentication/payment_show">Payment</a></li>
                                     <li><a href="#">Settings</a></li>
                                     <li class="divider"></li>
 <!--                                    <li class="dropdown-header"></li>-->
@@ -138,9 +134,6 @@
                 <div id="menu-toggle" href="#" class="col-md-12 btn-menu toggle">
                     <button class="btn btn-default orange-circle-button" href="">Post<span class="orange-circle-greater-than"></span></button>
                 </div>
-<!--                <a id="menu-toggle" href="#" class="glyphicon glyphicon-align-justify btn-menu toggle">-->
-<!--                   <i class="fa fa-bars"></i>-->
-<!--                </a>-->
             </h1>
         </div>
 
@@ -219,7 +212,6 @@
         <script src="<?php echo base_url();?>js/jquery.js"></script>
         <script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
         <script src="<?php echo base_url();?>js/jquery.easing.min.js"></script>
-        <script src="<?php echo base_url();?>js/slider.js"></script>
         <script src="<?php echo base_url();?>js/side_menu.js"></script>
     </body>
 </html>

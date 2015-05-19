@@ -129,9 +129,15 @@
                         <?php echo form_open('user_authentication/user_login_process', array('class'=>'form-signin')); ?>
                             <input type="text" name="username" class="form-control" placeholder="Username" required="" autofocus="">
                             <input type="password" name="password" class="form-control" placeholder="Password" required="">
+                               <?php if (isset($message_display))
+                                   echo "<div style = 'border-radius: 10px;' class='alert alert-danger' >
+                                            <span ><strong > Notice: </strong > Wrong username or password!</span >
+                                        </div >";
+                               ?>
                             <button class="btn btn-lg btn-primary btn-block" type="submit">
                                 Sign In
                             </button>
+
                     <p>or</p>
                         </form>
 <!--                    Sign Up modal-->
