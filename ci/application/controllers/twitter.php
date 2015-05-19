@@ -4,7 +4,6 @@ class Twitter extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
-        $this->load->library('twitter/twconnect');
     }
 	public function index() {
 	    $this->redirect();
@@ -24,11 +23,13 @@ class Twitter extends CI_Controller {
             redirect('twitter/failure');
 	}
 	public function success(){
-        $this->twconnect->twaccount_verify_credentials();
-        $user_info = $this->twconnect->tw_user_info;
-        $home_timeline = $this->get_home_timeline();
-        $data = array('user_info' => $user_info, 'home_timeline' => $home_timeline);
-        $this->load->view('twitter', $data);
+//        $this->twconnect->twaccount_verify_credentials();
+//        $user_info = $this->twconnect->tw_user_info;
+//        $home_timeline = $this->get_home_timeline();
+//        $data = array('user_info' => $user_info, 'home_timeline' => $home_timeline);
+//        var_dump($this->twconnect->twaccount_verify_credentials());
+        $data = $this->session->all_userdata();
+        $this->load->view('admin_page', $data);
 	}
 	public function failure() {
 		echo '<p>Twitter connect failed</p>';
