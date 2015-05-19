@@ -1,0 +1,41 @@
+.glyphicon {
+    margin-right: 4px !important; /*override*/
+}
+.pagination .glyphicon {
+    margin-right: 0px !important; /*override*/
+}
+.pagination a {
+    color: #555;
+}
+.panel ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+.news-item {
+    padding: 4px 4px;
+    margin: 0px;
+    border-bottom: 1px dotted #555;
+}
+
+.polaroid {
+    position: relative;
+    width: 220px;
+}
+
+.polaroid img {
+    border: 10px solid #577492;
+    border-bottom: 45px solid #577492;
+    -webkit-box-shadow: 3px 3px 3px #577492;
+    -moz-box-shadow: 3px 3px 3px #577492;
+    box-shadow: 3px 3px 3px #577492;
+}
+
+.polaroid p {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 0px;
+    font: 400 18px/1 'Kaushan Script', cursive;
+    color: #FFFFFF;
+}
