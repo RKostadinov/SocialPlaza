@@ -79,7 +79,7 @@
                             <li class="col-sm-3">
                                 <ul>
                                     <li class="dropdown-header">User</li>
-                                    <li><a href="#">My profile</a></li>
+                                    <li><a href="payment.html">Payment</a></li>
                                     <li><a href="#">Settings</a></li>
                                     <li class="divider"></li>
 <!--                                    <li class="dropdown-header"></li>-->
@@ -127,16 +127,20 @@
                             </div>
 <!--                    </li>-->
 <!--                    <li>-->
-                        <button class="btn btn-lg btn-primary btn-block post_button" type="submit">Post</button>
+
+                <button class="btn btn-lg btn-primary btn-block post_button" type="submit">Post</button>
 <!--                    </li>-->
 <!--                </ul>-->
             </nav>
         </div>
         <div class="content-header">
             <h1 id="home">
-                <a id="menu-toggle" href="#" class="glyphicon glyphicon-align-justify btn-menu toggle">
-                   <i class="fa fa-bars"></i>
-                </a>
+                <div id="menu-toggle" href="#" class="col-md-12 btn-menu toggle">
+                    <button class="btn btn-default orange-circle-button" href="">Post<span class="orange-circle-greater-than"></span></button>
+                </div>
+<!--                <a id="menu-toggle" href="#" class="glyphicon glyphicon-align-justify btn-menu toggle">-->
+<!--                   <i class="fa fa-bars"></i>-->
+<!--                </a>-->
             </h1>
         </div>
 

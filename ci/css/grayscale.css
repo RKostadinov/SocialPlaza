@@ -459,6 +459,35 @@ body {
 
 /*Side menu*/
 
+.orange-circle-button {
+    box-shadow: 2px 4px 0 2px rgba(0,0,0,0.1);
+    border: .5em solid #1b1b2a;
+    line-height: 1.1em;
+    color: #ffffff;
+    background-color: #b77d6e;
+    margin: auto;
+    border-radius: 50%;
+    height: 7em;
+    width: 7em;
+    position: relative;
+    font-size: 10px;
+}
+.orange-circle-button:hover {
+    color:#ffffff;
+    background-color: #b77d6e;
+    text-decoration: none;
+    border-color: #1b1b2a;
+
+}
+.orange-circle-button:visited {
+    color:#ffffff;
+    background-color: #b77d6e;
+    text-decoration: none;
+}
+.orange-circle-link-greater-than {
+    font-size: 1em;
+}
+
 #wrapper {
     padding-left: 250px;
     padding-top: 50px;

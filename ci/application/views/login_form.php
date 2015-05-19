@@ -107,7 +107,7 @@
                     <a class="page-scroll" href="#about">About</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#download">Download</a>
+                    <a class="page-scroll" href="#download">How to use</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#contact">Contact</a>
@@ -217,25 +217,36 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
             <h2>About SocialPlaza</h2>
-            <p>SocialPlaza is web app that provides the amazing opportunity to post to your favourite social website such as <a href="http://facebook.com">facebook</a>, <a href="http://twitter.com">twitter</a> and etc.</p>
-            <p>An easy way to entertain your followers just with one button and not only that!</p>
-            <p>You can still see your feeds from the other social website.</p>
+            <p>SocialPlaza is web app that provides the amazing opportunity to post to your favourite social website such as <a href="http://facebook.com">facebook</a>, <a href="http://twitter.com">twitter</a> and etc from a single web app.</p>
+            <p>Easy way to entertain your followers just with one button and also to scroll through your feed!</p>
         </div>
     </div>
 </section>
 
-<!-- Download Section -->
-<section id="download" class="content-section text-center">
-    <div class="download-section">
-        <div class="container">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Download Grayscale</h2>
-                <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-                <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
-            </div>
+<!--How to use-->
+<section id="about" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>How to use SocialPlaza</h2>
+            <p>SocialPlaza is web app that provides the amazing opportunity to post to your favourite social website such as <a href="http://facebook.com">facebook</a>, <a href="http://twitter.com">twitter</a> and etc from a single web app.</p>
+            <p>Easy way to entertain your followers just with one button and also to scroll through your feed!</p>
         </div>
     </div>
 </section>
+<img src="img/first_page_pic.png" style="max-width:100%;height:auto;">
+
+<!-- Download Section -->
+<!--<section id="download" class="content-section text-center">-->
+<!--    <div class="download-section">-->
+<!--        <div class="container">-->
+<!--            <div class="col-lg-8 col-lg-offset-2">-->
+<!--                <h1>Download SocialPlaza for Android</h2>-->
+<!--                <p>You can download SocialPlaza for free.</p>-->
+<!--                <a href="#" class="btn btn-default btn-lg">Visit Android market</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
 <!-- Contact Section -->
 <section id="contact" class="container content-section text-center">
