@@ -60,55 +60,6 @@
     <!-- /.container -->
 </nav>
 <!-- The end of the menu bar -->
-<!--Side menu, css - grayscale.css, js - slider.js-->
-
-<!--<div id="wrapper" class="active">-->
-    <!--&lt;!&ndash; Sidebar &ndash;&gt;-->
-    <!--<div id="sidebar-wrapper">-->
-        <!--<nav id="spy">-->
-            <!--&lt;!&ndash;                <ul class="nav">&ndash;&gt;-->
-            <!--&lt;!&ndash;                    <li>&ndash;&gt;-->
-            <!--<div id = "textbox">-->
-                <!--<textarea type="textarea" name="message" placeholder="What do you want to post?" class="post-box"></textarea>-->
-            <!--</div>-->
-            <!--<hr>-->
-            <!--<div class="col-md-6">-->
-                <!--<div class="funkyradio">-->
-                    <!--<div class="funkyradio-default">-->
-                        <!--<input type="checkbox" name="facebook" id="checkbox1" />-->
-                        <!--<label for="checkbox1">Facebook</label>-->
-                    <!--</div>-->
-                    <!--<div class="funkyradio-primary">-->
-                        <!--<input type="checkbox" name="twitter" id="checkbox2" />-->
-                        <!--<label for="checkbox2">Twitter</label>-->
-                    <!--</div>-->
-                    <!--<div class="funkyradio-success">-->
-                        <!--<input type="checkbox" name="checkbox" id="checkbox3"/>-->
-                        <!--<label for="checkbox3">LinkedIn</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--&lt;!&ndash;                    </li>&ndash;&gt;-->
-            <!--&lt;!&ndash;                    <li>&ndash;&gt;-->
-
-            <!--<button class="btn btn-lg btn-primary btn-block post_button" type="submit">Post</button>-->
-            <!--&lt;!&ndash;                    </li>&ndash;&gt;-->
-            <!--&lt;!&ndash;                </ul>&ndash;&gt;-->
-        <!--</nav>-->
-    <!--</div>-->
-    <!--<div class="content-header">-->
-        <!--<h1 id="home">-->
-            <!--<div id="menu-toggle" href="#" class="col-md-12 btn-menu toggle">-->
-                <!--<button class="btn btn-default orange-circle-button" href="">Post<span class="orange-circle-greater-than"></span></button>-->
-            <!--</div>-->
-            <!--&lt;!&ndash;                <a id="menu-toggle" href="#" class="glyphicon glyphicon-align-justify btn-menu toggle">&ndash;&gt;-->
-            <!--&lt;!&ndash;                   <i class="fa fa-bars"></i>&ndash;&gt;-->
-            <!--&lt;!&ndash;                </a>&ndash;&gt;-->
-        <!--</h1>-->
-    <!--</div>-->
-
-    <!--The end of the side menu        -->
-
     <!-- Page content -->
     <section id="download" class="text-center">
         <div class="download-section">
@@ -118,7 +69,7 @@
 <!--            </div>-->
         </div>
     </section>
-<br><br>
+<br>
 <!-- Plans -->
 <section id="plans">
     <div class="container">
@@ -127,15 +78,16 @@
             <div class="col-md-4 text-center">
                 <div class="panel panel-danger panel-pricing">
                     <div class="panel-heading">
-                        <i class="fa fa-desktop"></i>
-                        <h3>Plan 1</h3>
+                        <img src="<?php echo base_url(); ?>img/red_computer.png">
+                        <br><br>
+                        <h3>Small Plan</h3>
                     </div>
                     <div class="panel-body text-center">
                         <p><strong>$8 / Month</strong></p>
                     </div>
                     <ul class="list-group text-center">
                         <li class="list-group-item"><i class="fa fa-check"></i> Personal use</li>
-                        <li class="list-group-item"><i class="fa fa-check"></i> Unlimited projects</li>
+                        <li class="list-group-item"><i class="fa fa-check"></i> All social networks available</li>
                         <li class="list-group-item"><i class="fa fa-check"></i> 27/7 support</li>
                     </ul>
                     <div class="panel-footer">
@@ -147,15 +99,16 @@
             <div class="col-md-4 text-center">
                 <div class="panel panel-warning panel-pricing">
                     <div class="panel-heading">
-                        <i class="fa fa-desktop"></i>
-                        <h3>Plan 2</h3>
+                        <img src="<?php echo base_url(); ?>img/yellow_computer.png">
+                        <br><br>
+                        <h3>Medium Plan</h3>
                     </div>
                     <div class="panel-body text-center">
                         <p><strong>$20 / 3 Months</strong></p>
                     </div>
                     <ul class="list-group text-center">
                         <li class="list-group-item"><i class="fa fa-check"></i> Personal use</li>
-                        <li class="list-group-item"><i class="fa fa-check"></i> Unlimited projects</li>
+                        <li class="list-group-item"><i class="fa fa-check"></i> All social networks available</li>
                         <li class="list-group-item"><i class="fa fa-check"></i> 27/7 support</li>
                     </ul>
                     <div class="panel-footer">
@@ -167,15 +120,16 @@
             <div class="col-md-4 text-center">
                 <div class="panel panel-success panel-pricing">
                     <div class="panel-heading">
-                        <i class="fa fa-desktop"></i>
-                        <h3>Plan 3</h3>
+                        <img src="<?php echo base_url(); ?>img/green_computer.png">
+                        <br><br>
+                        <h3>Large Plan</h3>
                     </div>
                     <div class="panel-body text-center">
                         <p><strong>$50 / 6 Month</strong></p>
                     </div>
                     <ul class="list-group text-center">
                         <li class="list-group-item"><i class="fa fa-check"></i> Personal use</li>
-                        <li class="list-group-item"><i class="fa fa-check"></i> Unlimited projects</li>
+                        <li class="list-group-item"><i class="fa fa-check"></i> All social networks available</li>
                         <li class="list-group-item"><i class="fa fa-check"></i> 27/7 support</li>
                     </ul>
                     <div class="panel-footer">
