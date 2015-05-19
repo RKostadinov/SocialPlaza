@@ -42,8 +42,8 @@
                         <li class="col-sm-3">
                             <ul>
                                 <li class="dropdown-header">User</li>
+                                <li><a href="<?php echo base_url(); ?>">Post&feed</a></li>
                                 <li><a href="<?php echo base_url(); ?>user_authentication/payment_show">Payment</a></li>
-                                <li><a href="#">Settings</a></li>
                                 <li class="divider"></li>
                                 <!--                                    <li class="dropdown-header"></li>-->
                                 <li><a href="logout">Logout</a></li>
@@ -112,12 +112,10 @@
     <!-- Page content -->
     <section id="download" class="text-center">
         <div class="download-section">
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-<!--                    <h1>First month is free!</h1>-->
-<!--                    <p>Social life - better life!</p>-->
-                </div>
-            </div>
+<!--            <div class="container">-->
+<!--                <div class="col-lg-8 col-lg-offset-2">-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
     </section>
 <br><br>
@@ -126,7 +124,6 @@
     <div class="container">
         <div class="row">
 
-            <!-- item -->
             <div class="col-md-4 text-center">
                 <div class="panel panel-danger panel-pricing">
                     <div class="panel-heading">
@@ -134,7 +131,7 @@
                         <h3>Plan 1</h3>
                     </div>
                     <div class="panel-body text-center">
-                        <p><strong>$100 / Month</strong></p>
+                        <p><strong>$8 / Month</strong></p>
                     </div>
                     <ul class="list-group text-center">
                         <li class="list-group-item"><i class="fa fa-check"></i> Personal use</li>
@@ -146,9 +143,7 @@
                     </div>
                 </div>
             </div>
-            <!-- /item -->
 
-            <!-- item -->
             <div class="col-md-4 text-center">
                 <div class="panel panel-warning panel-pricing">
                     <div class="panel-heading">
@@ -156,7 +151,7 @@
                         <h3>Plan 2</h3>
                     </div>
                     <div class="panel-body text-center">
-                        <p><strong>$200 / Month</strong></p>
+                        <p><strong>$20 / 3 Months</strong></p>
                     </div>
                     <ul class="list-group text-center">
                         <li class="list-group-item"><i class="fa fa-check"></i> Personal use</li>
@@ -168,9 +163,7 @@
                     </div>
                 </div>
             </div>
-            <!-- /item -->
 
-            <!-- item -->
             <div class="col-md-4 text-center">
                 <div class="panel panel-success panel-pricing">
                     <div class="panel-heading">
@@ -178,7 +171,7 @@
                         <h3>Plan 3</h3>
                     </div>
                     <div class="panel-body text-center">
-                        <p><strong>$300 / Month</strong></p>
+                        <p><strong>$50 / 6 Month</strong></p>
                     </div>
                     <ul class="list-group text-center">
                         <li class="list-group-item"><i class="fa fa-check"></i> Personal use</li>
@@ -190,13 +183,10 @@
                     </div>
                 </div>
             </div>
-            <!-- /item -->
 
         </div>
     </div>
 </section>
-<!-- /Plans -->
-
 <script src="<?php echo base_url();?>js/jquery.js"></script>
 <script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
 <script src="<?php echo base_url();?>js/jquery.easing.min.js"></script>

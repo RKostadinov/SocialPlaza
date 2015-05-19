@@ -26,6 +26,10 @@ Class User_Authentication extends CI_Controller {
     public function admin_page_show($data){
         $this->load->view('admin_page', $data);
     }
+    public function payment_show(){
+        $this->load->view('payment');
+    }
+
 	public function new_user_registration() {
 		$this->form_validation->set_rules('first_name', 'First Name', 'trim|required|xss_clean');
         $this->form_validation->set_rules('last_name', 'Last Name', 'trim|required|xss_clean');
@@ -133,6 +137,7 @@ Class User_Authentication extends CI_Controller {
 
                 }
 			}else{
+//                $this->session->set_flashdata('message_display', 'Invalid Username or Password');
                 $data['message_display'] = 'Invalid Username or Password';
 				$this->load->view('login_form', $data);
 			}

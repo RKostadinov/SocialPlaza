@@ -75,8 +75,8 @@
                             <li class="col-sm-3">
                                 <ul>
                                     <li class="dropdown-header">User</li>
+                                    <li><a href="<?php echo base_url(); ?>">Post&feed</a></li>
                                     <li><a href="<?php echo base_url(); ?>user_authentication/payment_show">Payment</a></li>
-                                    <li><a href="#">Settings</a></li>
                                     <li class="divider"></li>
 <!--                                    <li class="dropdown-header"></li>-->
                                     <li><a href="logout">Logout</a></li>
@@ -213,5 +213,6 @@
         <script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
         <script src="<?php echo base_url();?>js/jquery.easing.min.js"></script>
         <script src="<?php echo base_url();?>js/side_menu.js"></script>
+        <script src="<?php echo base_url();?>js/slider.js"></script>
     </body>
 </html>
