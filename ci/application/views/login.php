@@ -23,9 +23,11 @@
 
 
         <div class="polaroid">
+
             <!-- Display profile name -->
             <p><?=$user_profile['name']?></p>
             <img src="https://graph.facebook.com/<?=$user_profile['id']?>/picture?type=large">
+
         </div>
         <br>
         <br>
@@ -55,9 +57,8 @@
                                                         echo "<table cellpadding='4'>";
                                                         echo "<tr>";
                                                         echo "<td>";
-                                                        echo "<h4>Status updated on: " . date("jS M, Y", (strtotime($post['created_time']))) . "</h4>";
-                                                        echo "<p style= 'font-family:Garamond, Georgia, serif;'></p>";
-                                                        echo "<p>" . $post['message'] . "</p>";
+                                                        echo "<h4 >Status updated on: " . date("jS M, Y", (strtotime($post['created_time']))) . "</h4>";
+                                                        echo "<p style = 'color: #664B51;'>" . $post['message'] . "</p>";
                                                         echo "</td>";
                                                         echo "</tr>";
                                                         echo "</table>";
@@ -76,19 +77,19 @@
                                                         echo "<h2>Photo posted on: " . date("jS M, Y", (strtotime($post['created_time']))) . "</h2>";
 
                                                         if (empty($post['story']) === false) {
-                                                            echo "<p>" . $post['story'] . "</p>";
+                                                            echo "<p style = 'color: #72545B;'>" . $post['story'] . "</p>";
                                                         } elseif (empty($post['message']) === false) {
-                                                            echo "<p>" . $post['message'] . "</p>";
+                                                            echo "<p style = 'color: #72545B;'>" . $post['message'] . "</p>";
                                                         }
                                                         echo "<li class='news-item'>";
                                                         echo "<table cellpadding='4'>";
                                                         echo "<tr>";
                                                         echo "<td>";
-                                                        echo "<img src =" . $post['picture'] . " />";
+                                                        echo "<img src =" . $post['picture'] . "  style = ' border: 6px ;border-style: outset;' />";
                                                         echo "<br>";
                                                         echo "<div class='button'>";
                                                         echo "<br>";
-                                                        echo "<p><a href=\"" . $post['link'] . "\" target=\"_blank\" class='btn btn-blue'>View photo &rarr;</a><p>";
+                                                        echo "<a href=\"" . $post['link'] . "\" target=\"_blank\" class='btn btn-blue' target= 'blank'>View photo &rarr;</a>";
                                                         echo "</div>";
                                                         echo "</td>";
                                                         echo "</tr>";
