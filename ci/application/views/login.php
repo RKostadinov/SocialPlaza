@@ -5,7 +5,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>SocialPlaza | Facebook</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="scripts/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
     <link href="<?php echo base_url();?>css/feeds.css" rel="stylesheet">
 
 
@@ -14,17 +13,11 @@
 </head>
 
 <body>
-    <?php //site_url('facebook_process/loginByFacebook');?>
-    <!-- @user_profile check when user login successed  -->
-    <?php if (@$user_profile):  // call var_dump($user_profile) to view all data ?>
-        <!-- Display profile photo -->
-
-
         <div class="polaroid">
 
             <!-- Display profile name -->
             <p><?=$user_profile['name']?></p>
-            <img src="https://graph.facebook.com/<?=$user_profile['id']?>/picture?type=large">
+            <img src="https://graph.facebook.com/<?php $user_profile['id']?>/picture?type=large">
 
         </div>
         <br>
@@ -45,8 +38,10 @@
                                         <!--<td><img src="images/1.png" width="60" class="img-circle" /></td>-->
                                         <td>
                                             <?php
+//                                            $feeds = json_decode($feed['data'] , true);
+//                                            var_dump($feeds);
                                             $i = 0;
-                                            foreach($feed['data'] as $post) {
+                                            foreach( $feeds as $post) {
 
                                                 if ($post['type'] == 'status' || $post['type'] == 'link' || $post['type'] == 'photo') {
 
@@ -115,29 +110,10 @@
             <div class="panel-footer"> </div>
         </div>
 
-        <?php
-            echo form_open('facebook_process/post_to_wall');
-            echo form_label('What\'s on your mind? ');
-            echo "</br>";
-            echo form_input('message');
-            echo "</br>";
-            echo form_label('You wanna post link?');
-            echo "</br>";
-            echo form_input('link');
-            echo "</br>";
-            echo form_label('You wanna post image?');
-            echo "</br>";
-            echo form_input('picture');
-            echo "</br>";
-            echo form_submit('submit', 'Post');
-            echo form_close();
-        ?>
-
-        <!-- Create link to facebook profile -->
         <a href="<?=$user_profile['link']?> " class='btn btn-blue'>View Profile</a>
-        <!-- Create link logout -->
+
         <a href="<?= $logout_url ?>" class='btn btn-blue'>Logout</a>
-    <?php endif; ?>
+
 
 
 </body>

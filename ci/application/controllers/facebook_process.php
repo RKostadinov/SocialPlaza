@@ -10,14 +10,13 @@ class Facebook_process extends CI_Controller
 
     }
 
-    public function index()
-    {
+    public function index(){
 
         redirect($this->facebook->login_url());
     }
 
 
-//
+
 //        public function index(){
 //            $this->show_feed();
 //        }
@@ -47,50 +46,18 @@ class Facebook_process extends CI_Controller
 //        var_dump($this->session->all_userdata());
 //        $this->load->view('login', $data);
 //	}
-//
-//    public function show_feed(){
-//            $feed = $this->facebook->api('me/feed');
-//        return $feed;
-//
-//
-//    }
-//    public function post_to_wall()
-//    {
-////        $this->load->library('facebook/facebook');
-////        if($this->fbSession)
-////        {
-//            $param = array('message'=>$this->input->post('message'));
-////            if($photourl!="")
-////            {
-////                $param["picture"] = $photourl;
-////            }
-////            if($link!="")
-////                $param["link"] = $link;
-////        $wall_post = array('message' => 'this is my message'
-////            'name' => 'SocialPlaza',
-////            'caption' => "Caption of the Post",
-////            'link' => 'http://socialplaza.info',
-////            'description' => 'Post from www.socialplaza.info',
-////            'picture' => 'http://mysite.com/pic.gif',
-////            'actions' => array(array('name' => 'Get Search',
-////                'link' => 'http://www.google.com'))
-////        );
-////        $result = $this->facebook->api('/me/feed/', 'post', $wall_post);
-//            echo $param['message'];
-//            if($posts = $this->facebook->api('/me/feed','post',$param) == TRUE){
-//                echo "You successfully upload a file";
-//            }else{
-//                echo "File upload failed";
-//            }
-//
-////            return TRUE;
-////        }
-////        else
-////        {
-////            return FALSE;
-////        }
-//
-//    }
+
+    public function show_feed(){
+        $data["feed"]  = $this->facebook->show_feed()->getResponse();
+        $data['user_profile'] = $this->facebook->get_user();
+
+   var_dump($data['feed']);
+        $this->load->view('login', $data);
+        return $data;
+
+
+    }
+
 //    public function logout(){
 ////        $this->load->library('facebook');
 //

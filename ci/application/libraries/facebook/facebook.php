@@ -97,4 +97,11 @@ class Facebook {
 
 
     }
+
+    public function show_feed(){
+
+     return   $request = ( new FacebookRequest( $this->session, 'GET', '/10204068305295525/feed') )->execute();
+
+
+    }
 }

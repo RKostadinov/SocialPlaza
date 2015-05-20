@@ -44,6 +44,7 @@ $route['user_login_show'] = "user_authentication/user_login_show";
 $route['logout'] = "user_authentication/logout";
 $route['404_override'] = 'errors/page_missing';
 $route['facebook'] = 'facebook_process';
+$route['facebook/show_feed'] = 'facebook_process/show_feed';
 $route['instagram'] = 'user/profile';
 $route['tumblr'] = 'tumblrcon';
 $route['translate_uri_dashes'] = FALSE;

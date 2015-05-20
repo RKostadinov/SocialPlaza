@@ -13,14 +13,6 @@
     echo "Friends: $user_info->friends_count<br />";
     echo '<p><a href="' . base_url() . 'twitter/clearsession">Logout</a></p>';
 
-    $data = array('name' => 'tweet_text',
-                  'placeholder' => 'Tweet text :)');
-    echo form_open('twitter/tweet');
-    echo form_input($data);
-    echo form_submit('submit', 'Tweet');
-    echo form_close();
-    echo "<br />";
-
     foreach ($home_timeline as $tweet) {
         $name = $tweet->user->name;
         $text = $tweet->text;
