@@ -38,8 +38,8 @@ class Twitter extends CI_Controller{
         $tokens = $this->twitter_database->get_tokens($this->session->all_userdata());
 		if($tokens[0]->oauth_token && $tokens[0]->oauth_token_secret) {
 			// User is already authenticated. Add your user notification code here.
-			redirect(base_url('/'));
-		}
+        $this->show_feed();
+        }
 		else {
 			// Making a request for request_token
 			$request_token = $this->connection->getRequestToken(base_url('/twitter/callback'));
@@ -146,6 +146,17 @@ class Twitter extends CI_Controller{
 		$this->session->unset_userdata('twitter_user_id');
 		$this->session->unset_userdata('twitter_screen_name');
 	}
+
+
+    public function show_feed(){
+        $tokens = $this->twitter_database->get_tokens($this->session->all_userdata());
+        $connection = $this->twitteroauth->create($this->config->item('twitter_consumer_token'), $this->config->item('twitter_consumer_secret'), $tokens[0]->oauth_token, $tokens[0]->oauth_token_secret);
+        $feed = $connection->get('statuses/home_timeline', array('count' => 10));
+        $user_info = $connection->get('account/verify_credentials');
+        $data = array('user_info' => $user_info, 'home_timeline' => $feed);
+        $this->load->view('twitter', $data);
+
+    }
 }
 
 /* End of file twitter.php */
