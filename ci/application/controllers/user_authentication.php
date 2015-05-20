@@ -64,17 +64,29 @@ Class User_Authentication extends CI_Controller {
                     'smtp_pass' => 'me3eto123',
                     'smtp_port' => 587,
                     'crlf' => "\r\n",
-                    'newline' => "\r\n"
+                    'newline' => "\r\n",
+                    'mailtype' => 'html',
                 ));
-
                 $code = $data['verified'];
-                $message = "http://localhost/ci/user_authentication/confirm/$code";
+                $link = "http://localhost/ci/user_authentication/confirm/$code";
+
+
+                $button = array(
+                    'first_name' 			=> $this->input->post('first_name'),
+                    'title' => $link
+                );
+
+                $message = $this->load->view('email_view', $button, true);
+                $this->email->message($message);
+
                 $data = array(
                     'name' 			=> 'SocialPlaza',
                     'email' 	    => 'admin@sociaplaza.info',
                     'text' 	        => $message,
                     'receiver' 	    => $data['email_value']
                 );
+
+
                 $this->email->from($data['email'], $data['name']);
                 $this->email->to($data['receiver']);
                 $this->email->subject('Email verification');
