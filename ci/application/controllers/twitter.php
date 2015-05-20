@@ -1,17 +1,7 @@
 <?php
-/**
- * Twitter OAuth library.
- * Sample controller.
- * Requirements: enabled Session library, enabled URL helper
- * Please note that this sample controller is just an example of how you can use the library.
- */
 defined('BASEPATH') OR exit('No direct script access allowed');
+class Twitter extends CI_Controller{
 
-class Twitter extends CI_Controller
-{
-	/**
-	 * TwitterOauth class instance.
-	 */
 	private $connection;
 	
 	/**
@@ -45,17 +35,16 @@ class Twitter extends CI_Controller
 	 * @return	void
 	 */
 	public function auth(){
-		if($this->session->userdata('access_token') && $this->session->userdata('access_token_secret')) {
+        $tokens = $this->twitter_database->get_tokens($this->session->all_userdata());
+		if($tokens[0]->oauth_token && $tokens[0]->oauth_token_secret) {
 			// User is already authenticated. Add your user notification code here.
 			redirect(base_url('/'));
 		}
 		else {
 			// Making a request for request_token
 			$request_token = $this->connection->getRequestToken(base_url('/twitter/callback'));
-
 			$this->session->set_userdata('request_token', $request_token['oauth_token']);
 			$this->session->set_userdata('request_token_secret', $request_token['oauth_token_secret']);
-			
 			if($this->connection->http_code == 200) {
 				$url = $this->connection->getAuthorizeURL($request_token);
 				redirect($url);

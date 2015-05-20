@@ -1,228 +1,94 @@
 <?php
-/**
- * Copyright 2011 Facebook, Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may
- * not use this file except in compliance with the License. You may obtain
- * a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations
- * under the License.
- */
+// Skip these two lines if you're using Composer
+define('FACEBOOK_SDK_V4_SRC_DIR', APPPATH . 'libraries/facebook/vendor/Facebook/');
+require APPPATH . 'libraries/facebook/vendor/Facebook/autoload.php';
 
-require_once "base_facebook.php";
+use Facebook\FacebookSession;
+use Facebook\FacebookRequest;
+use Facebook\GraphUser;
+use Facebook\FacebookRequestException;
 
-/**
- * Extends the BaseFacebook class with the intent of using
- * PHP sessions to store user ids and access tokens.
- */
-class Facebook extends BaseFacebook
-{
-  /**
-   * Cookie prefix
-   */
-  const FBSS_COOKIE_NAME = 'fbss';
+use Facebook\FacebookRedirectLoginHelper;
+//
+//
+class Facebook {
+    var $ci;
+    var $helper;
+    var $session;
+    var $permissions;
 
-  /**
-   * We can set this to a high number because the main session
-   * expiration will trump this.
-   */
-  const FBSS_COOKIE_EXPIRE = 31556926; // 1 year
+    public function __construct() {
+        $this->ci =& get_instance();
+//        $this->ci->config->load('facebook');
 
-  /**
-   * Stores the shared session ID if one is set.
-   *
-   * @var string
-   */
-  protected $sharedSessionID;
+        $this->permissions = $this->ci->config->item('permissions', 'facebook');
 
-  /**
-   * Identical to the parent constructor, except that
-   * we start a PHP session to store the user ID and
-   * access token if during the course of execution
-   * we discover them.
-   *
-   * @param array $config the application configuration. Additionally
-   * accepts "sharedSession" as a boolean to turn on a secondary
-   * cookie for environments with a shared session (that is, your app
-   * shares the domain with other apps).
-   *
-   * @see BaseFacebook::__construct
-   */
-  public function __construct($config) {
-    if ((function_exists('session_status') 
-      && session_status() !== PHP_SESSION_ACTIVE) || !session_id()) {
-      session_start();
-    }
-    parent::__construct($config);
-    if (!empty($config['sharedSession'])) {
-      $this->initSharedSession();
+        // Initialize the SDK
+        FacebookSession::setDefaultApplication( $this->ci->config->item('api_id', 'facebook'), $this->ci->config->item('app_secret', 'facebook') );
 
-      // re-load the persisted state, since parent
-      // attempted to read out of non-shared cookie
-      $state = $this->getPersistentData('state');
-      if (!empty($state)) {
-        $this->state = $state;
-      } else {
-        $this->state = null;
-      }
+        // Create the login helper and replace REDIRECT_URI with your URL
+        // Use the same domain you set for the apps 'App Domains'
+        // e.g. $helper = new FacebookRedirectLoginHelper( 'http://mydomain.com/redirect' );
+        $this->helper = new FacebookRedirectLoginHelper( $this->ci->config->item('redirect_url', 'facebook') );
 
-    }
-  }
+        if ( $this->ci->session->userdata('fb_token') ) {
+            $this->session = new FacebookSession( $this->ci->session->userdata('fb_token') );
 
-  /**
-   * Supported keys for persistent data
-   *
-   * @var array
-   */
-  protected static $kSupportedKeys =
-    array('state', 'code', 'access_token', 'user_id');
+            // Validate the access_token to make sure it's still valid
+            try {
+                if ( ! $this->session->validate() ) {
+                    $this->session = null;
+                }
+            } catch ( Exception $e ) {
+                // Catch any exceptions
+                $this->session = null;
+            }
+        } else {
+            // No session exists
+            try {
+                $this->session = $this->helper->getSessionFromRedirect();
+            } catch( FacebookRequestException $ex ) {
+                // When Facebook returns an error
+            } catch( Exception $ex ) {
+                // When validation fails or other local issues
+            }
+        }
 
-  /**
-   * Initiates Shared Session
-   */
-  protected function initSharedSession() {
-    $cookie_name = $this->getSharedSessionCookieName();
-    if (isset($_COOKIE[$cookie_name])) {
-      $data = $this->parseSignedRequest($_COOKIE[$cookie_name]);
-      if ($data && !empty($data['domain']) &&
-          self::isAllowedDomain($this->getHttpHost(), $data['domain'])) {
-        // good case
-        $this->sharedSessionID = $data['id'];
-        return;
-      }
-      // ignoring potentially unreachable data
-    }
-    // evil/corrupt/missing case
-    $base_domain = $this->getBaseDomain();
-    $this->sharedSessionID = md5(uniqid(mt_rand(), true));
-    $cookie_value = $this->makeSignedRequest(
-      array(
-        'domain' => $base_domain,
-        'id' => $this->sharedSessionID,
-      )
-    );
-    $_COOKIE[$cookie_name] = $cookie_value;
-    if (!headers_sent()) {
-      $expire = time() + self::FBSS_COOKIE_EXPIRE;
-      setcookie($cookie_name, $cookie_value, $expire, '/', '.'.$base_domain);
-    } else {
-      // @codeCoverageIgnoreStart
-      self::errorLog(
-        'Shared session ID cookie could not be set! You must ensure you '.
-        'create the Facebook instance before headers have been sent. This '.
-        'will cause authentication issues after the first request.'
-      );
-      // @codeCoverageIgnoreEnd
-    }
-  }
+        if ( $this->session ) {
+            $this->ci->session->set_userdata( 'fb_token', $this->session->getToken() );
 
-  /**
-   * Provides the implementations of the inherited abstract
-   * methods. The implementation uses PHP sessions to maintain
-   * a store for authorization codes, user ids, CSRF states, and
-   * access tokens.
-   */
-
-  /**
-   * {@inheritdoc}
-   *
-   * @see BaseFacebook::setPersistentData()
-   */
-  protected function setPersistentData($key, $value) {
-    if (!in_array($key, self::$kSupportedKeys)) {
-      self::errorLog('Unsupported key passed to setPersistentData.');
-      return;
+            $this->session = new FacebookSession( $this->session->getToken() );
+        }
     }
 
-    $session_var_name = $this->constructSessionVariableName($key);
-    $_SESSION[$session_var_name] = $value;
-  }
-
-  /**
-   * {@inheritdoc}
-   *
-   * @see BaseFacebook::getPersistentData()
-   */
-  protected function getPersistentData($key, $default = false) {
-    if (!in_array($key, self::$kSupportedKeys)) {
-      self::errorLog('Unsupported key passed to getPersistentData.');
-      return $default;
+    /**
+     * Returns the login URL.
+     */
+    public function login_url() {
+        return $this->helper->getLoginUrl( $this->permissions );
     }
 
-    $session_var_name = $this->constructSessionVariableName($key);
-    return isset($_SESSION[$session_var_name]) ?
-      $_SESSION[$session_var_name] : $default;
-  }
+    /**
+     * Returns the current user's info as an array.
+     */
+    public function get_user() {
+        if ( $this->session ) {
+            /**
+             * Retrieve User’s Profile Information
+             */
+            // Graph API to request user data
+            $request = ( new FacebookRequest( $this->session, 'GET', '/me' ) )->execute();
 
-  /**
-   * {@inheritdoc}
-   *
-   * @see BaseFacebook::clearPersistentData()
-   */
-  protected function clearPersistentData($key) {
-    if (!in_array($key, self::$kSupportedKeys)) {
-      self::errorLog('Unsupported key passed to clearPersistentData.');
-      return;
+            // Get response as an array
+            $user = $request->getGraphObject()->asArray();
+
+            return $user;
+        }
+        return false;
     }
+    public function post($message){
+        $request = ( new FacebookRequest( $this->session, 'POST', '/me/feed', array('message'=>$message) ) )->execute();
 
-    $session_var_name = $this->constructSessionVariableName($key);
-    if (isset($_SESSION[$session_var_name])) {
-      unset($_SESSION[$session_var_name]);
+
     }
-  }
-
-  /**
-   * {@inheritdoc}
-   *
-   * @see BaseFacebook::clearAllPersistentData()
-   */
-  protected function clearAllPersistentData() {
-    foreach (self::$kSupportedKeys as $key) {
-      $this->clearPersistentData($key);
-    }
-    if ($this->sharedSessionID) {
-      $this->deleteSharedSessionCookie();
-    }
-  }
-
-  /**
-   * Deletes Shared session cookie
-   */
-  protected function deleteSharedSessionCookie() {
-    $cookie_name = $this->getSharedSessionCookieName();
-    unset($_COOKIE[$cookie_name]);
-    $base_domain = $this->getBaseDomain();
-    setcookie($cookie_name, '', 1, '/', '.'.$base_domain);
-  }
-
-  /**
-   * Returns the Shared session cookie name
-   *
-   * @return string The Shared session cookie name
-   */
-  protected function getSharedSessionCookieName() {
-    return self::FBSS_COOKIE_NAME . '_' . $this->getAppId();
-  }
-
-  /**
-   * Constructs and returns the name of the session key.
-   *
-   * @see setPersistentData()
-   * @param string $key The key for which the session variable name to construct.
-   *
-   * @return string The name of the session key.
-   */
-  protected function constructSessionVariableName($key) {
-    $parts = array('fb', $this->getAppId(), $key);
-    if ($this->sharedSessionID) {
-      array_unshift($parts, $this->sharedSessionID);
-    }
-    return implode('_', $parts);
-  }
 }

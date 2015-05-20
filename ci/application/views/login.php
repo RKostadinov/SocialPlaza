@@ -116,21 +116,21 @@
         </div>
 
         <?php
-           // echo form_open('facebook_process/post_to_wall');
-           // echo form_label('What\'s on your mind? ');
-            //echo "</br>";
-            //echo form_input('message');
-            //echo "</br>";
-            //echo form_label('You wanna post link?');
-            //echo "</br>";
-            //echo form_input('link');
-            //echo "</br>";
-            //echo form_label('You wanna post image?');
-            //echo "</br>";
-            //echo form_input('picture');
-           // echo "</br>";
-           // echo form_submit('submit', 'Post');
-            //echo form_close();
+            echo form_open('facebook_process/post_to_wall');
+            echo form_label('What\'s on your mind? ');
+            echo "</br>";
+            echo form_input('message');
+            echo "</br>";
+            echo form_label('You wanna post link?');
+            echo "</br>";
+            echo form_input('link');
+            echo "</br>";
+            echo form_label('You wanna post image?');
+            echo "</br>";
+            echo form_input('picture');
+            echo "</br>";
+            echo form_submit('submit', 'Post');
+            echo form_close();
         ?>
 
         <!-- Create link to facebook profile -->

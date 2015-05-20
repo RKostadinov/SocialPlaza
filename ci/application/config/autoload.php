@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database', 'session', 'email', 'form_validation', 'twitter/twitteroauth' );
+$autoload['libraries'] = array('database', 'session', 'email', 'form_validation', 'twitter/twitteroauth', 'facebook/facebook' );
 
 
 /*
@@ -80,7 +80,7 @@ $autoload['helper'] = array('url', 'form', 'security');
 |
 */
 
-$autoload['config'] = array('twitter');
+$autoload['config'] = array('twitter', 'facebook');
 
 
 /*

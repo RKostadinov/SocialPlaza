@@ -9,7 +9,6 @@ class Twitter_database extends CI_Model{
                         "oauth_token"           =>  $data['access_token'],
                         "oauth_token_secret"    =>  $data['access_token_secret']
                         );
-//        $this->db->where('user_id', $user_id);
         $this->db->insert('twitter', $content);
         if ($this->db->affected_rows() > 0) {
             return true;
@@ -17,23 +16,6 @@ class Twitter_database extends CI_Model{
 
         return false;
     }
-//
-//    public function update_tokens($data){
-//        $user_id =$this->get_user_id($data['session']);
-//        $content = array(
-//            "oauth_token"           =>  $data['tw_access_token']['oauth_token'],
-//            "oauth_token_secret"    =>  $data['tw_access_token']['oauth_token_secret']
-//        );
-//        $this->db->where('user_id', $user_id);
-//        $this->db->set($content);
-//        $this->db->update('twitter');
-////        $this->db->update('twitter', $content);
-//
-//        if ($this->db->affected_rows() > 0) {
-//            return true;
-//        }
-//        return false;
-//    }
 
     public function get_user_id($data){
         $this->db->select('id');
