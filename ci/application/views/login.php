@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="scripts/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
-    <link href="http://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url();?>css/feeds.css" rel="stylesheet">
-    <link href="<?php echo base_url();?>css/feeds.css" rel="stylesheet">
+
 
 
 
@@ -88,7 +87,10 @@
                                                         echo "<tr>";
                                                         echo "<td>";
                                                         echo "<img src =" . $post['picture'] . " />";
-                                                        echo "<p><a href=\"" . $post['link'] . "\" target=\"_blank\">View photo &rarr;</a></p>";
+                                                        echo "<p></p>";
+                                                        echo "<div class='button'>";
+                                                        echo "<p><a href=\"" . $post['link'] . "\" target=\"_blank\" class='btn btn-blue'>View photo &rarr;</a><p>";
+                                                        echo "</div>";
                                                         echo "</td>";
                                                         echo "</tr>";
                                                         echo "</table>";
@@ -116,29 +118,30 @@
         </div>
 
         <?php
-            echo form_open('facebook_process/post_to_wall');
-            echo form_label('What\'s on your mind? ');
-            echo "</br>";
-            echo form_input('message');
-            echo "</br>";
-            echo form_label('You wanna post link?');
-            echo "</br>";
-            echo form_input('link');
-            echo "</br>";
-            echo form_label('You wanna post image?');
-            echo "</br>";
-            echo form_input('picture');
-            echo "</br>";
-            echo form_submit('submit', 'Post');
-            echo form_close();
+           // echo form_open('facebook_process/post_to_wall');
+           // echo form_label('What\'s on your mind? ');
+            //echo "</br>";
+            //echo form_input('message');
+            //echo "</br>";
+            //echo form_label('You wanna post link?');
+            //echo "</br>";
+            //echo form_input('link');
+            //echo "</br>";
+            //echo form_label('You wanna post image?');
+            //echo "</br>";
+            //echo form_input('picture');
+           // echo "</br>";
+           // echo form_submit('submit', 'Post');
+            //echo form_close();
         ?>
 
         <!-- Create link to facebook profile -->
-        <button type="button" class="btn btn-primary"><a href="<?=$user_profile['link']?>">View Profile</a></button>
+        <a href="<?=$user_profile['link']?> " class='btn btn-blue'>View Profile</a>
         <!-- Create link logout -->
-        <button type="button" class="btn btn-primary"><a href="<?= $logout_url ?>">Logout</a></button>
+        <a href="<?= $logout_url ?>" class='btn btn-blue'>Logout</a>
     <?php endif; ?>
 </div>
+
 
 </body>
 
