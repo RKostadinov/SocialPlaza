@@ -20,11 +20,10 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-        $this->load->library('instagram_api');
 		// Get popular media using the client id call
 		$data['popular_media'] = $this->instagram_api->get_popular_media();
 
-		$data['main_view'] = 'instagram/welcome_message';
+		$data['main_view'] = 'welcome_message';
 		
 		$this->load->vars($data);
 		

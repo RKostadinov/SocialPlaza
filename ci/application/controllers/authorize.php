@@ -17,7 +17,6 @@ class Authorize extends CI_Controller {
 	
 		// Make sure that there is a GET variable of code
 		if(isset($_GET['code']) && $_GET['code'] != '') {
-			
 			$auth_response = $this->instagram_api->authorize($_GET['code']);
 			
 			// Set up session variables containing some useful Instagram data
@@ -39,3 +38,6 @@ class Authorize extends CI_Controller {
 	}
 	
 }
+
+/* End of file welcome.php */
+/* Location: ./application/controllers/welcome.php */

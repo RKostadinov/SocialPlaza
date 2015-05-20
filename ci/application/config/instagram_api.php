@@ -1,9 +1,18 @@
 <?php
 
+/*
+|--------------------------------------------------------------------------
+| Instagram
+|--------------------------------------------------------------------------
+|
+| Instagram client details
+|
+*/
+
 $config['instagram_client_name']	= 'SocialPlaza';
 $config['instagram_client_id']		= '139f4c82603643519941e15eb3e026ea';
 $config['instagram_client_secret']	= '471bc0a7a75b4a46ba704d6834ef0d60';
-$config['instagram_callback_url']	= 'http://socialplaza.info/ci/Authorize/get_code';
+$config['instagram_callback_url']	= 'http://socialplaza.info/ci/authorize/get_code';
 $config['instagram_website']		= 'http://socialplaza.info';
 $config['instagram_description']	= '';
 	

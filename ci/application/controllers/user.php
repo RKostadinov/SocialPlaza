@@ -5,10 +5,10 @@ class User extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		
+
 		// Set the instagram library access token variable
 		$this->instagram_api->access_token = $this->session->userdata('instagram-token');
-		
+
 	}
 	
 	function index()
@@ -22,34 +22,37 @@ class User extends CI_Controller {
 		if($user_id === FALSE) {
 			$user_id = $this->session->userdata('instagram-user-id');
 		}
-		
+
 		// Get the user data
 		$data['user_data'] = $this->instagram_api->get_user($user_id);
 
-		$data['main_view'] = 'instagram/user_profile';
-		
-		$this->load->vars($data);
-		
-		$this->load->view('instagram/template');
-		
-	}
-	
-	function feed()
-	{
-		
-		// Get the user data
-		$data['user_data'] = $this->instagram_api->get_user($this->session->userdata('instagram-user-id'));
-		
-		// Get the user feed
-		$data['user_feed'] = $this->instagram_api->get_user_feed();
+		$data['main_view'] = 'user_profile';
 
-		$data['main_view'] = 'instagram/user_feed';
-		
-		$this->load->vars($data);
-		
-		$this->load->view('instagram/template');
-		
+        // Get the user feed
+        $data['user_feed'] = $this->instagram_api->get_user_feed();
+
+        $data['main_view'] = 'user_feed';
+        $this->load->vars($data);
+
+        $this->load->view('template');
 	}
+
+//	function feed()
+//	{
+//
+//		// Get the user data
+//		$data['user_data'] = $this->instagram_api->get_user($this->session->userdata('instagram-user-id'));
+//
+//		// Get the user feed
+//		$data['user_feed'] = $this->instagram_api->get_user_feed();
+//
+//		$data['main_view'] = 'user_feed';
+//
+//		$this->load->vars($data);
+//
+//		$this->load->view('template');
+//
+//	}
 	
 	function recent($user_id = FALSE)
 	{
@@ -63,11 +66,11 @@ class User extends CI_Controller {
 		
 		$data['user_recent_data'] = $this->instagram_api->get_user_recent($user_id);
 		
-		$data['main_view'] = 'instagram/user_recent';
+		$data['main_view'] = 'user_recent';
 		
 		$this->load->vars($data);
 		
-		$this->load->view('/instagram/template');
+		$this->load->view('template');
 		
 	}
 	
@@ -98,11 +101,11 @@ class User extends CI_Controller {
 				'value'	=> 'Search'
 		);
 		
-		$data['main_view'] = 'instagram/user_search';
+		$data['main_view'] = 'user_search';
 		
 		$this->load->vars($data);
 		
-		$this->load->view('instagram/template');
+		$this->load->view('template');
 		
 	}
 	
@@ -117,13 +120,13 @@ class User extends CI_Controller {
 		$data['user_data'] = $this->instagram_api->get_user($this->session->userdata('instagram-user-id'));
 		
 		// Get the user feed
-		$data['follows'] = $this->instagram_api->user_follows($user_id);
+        $data['follows'] = $this->instagram_api->user_follows($user_id);
 
-		$data['main_view'] = 'instagram/follows';
+        $data['main_view'] = 'follows';
 		
 		$this->load->vars($data);
 		
-		$this->load->view('instagram/template');
+		$this->load->view('template');
 		
 	}
 	
@@ -140,11 +143,11 @@ class User extends CI_Controller {
 		// Get the user feed
 		$data['followed_by'] = $this->instagram_api->user_followed_by($user_id);
 
-		$data['main_view'] = 'instagram/followed_by';
+		$data['main_view'] = 'followed_by';
 		
 		$this->load->vars($data);
 		
-		$this->load->view('instagram/template');
+		$this->load->view('template');
 		
 	}
 	
