@@ -52,7 +52,8 @@ Class User_Authentication extends CI_Controller {
             $email_check = $this->login_database->check_email($data);
             if($email_check == TRUE){
 //                $data['message_display'] = 'Email already exists!';
-                $this->load->view('registration_form', $data);
+                echo "<p style='color: red; text-align: center'>Ooops, email already exists!</p>";
+//                $this->load->view('registration_form', $data);
             }
 			$result = $this->login_database->registration_insert($data) ;
 			if ($result == TRUE) {
@@ -97,8 +98,9 @@ Class User_Authentication extends CI_Controller {
 //				$data['message_display'] = 'Registration Successfully !';
 				$this->load->view('login_form', $data);
 			} else {
+                echo "<p style='color: red; text-align: center'>Ooops, username already exists!</p>";
 //				$data['message_display'] = 'Username already exist!';
-				$this->load->view('registration_form', $data);
+//				$this->load->view('registration_form', $data);
 		}
 		}
 	}

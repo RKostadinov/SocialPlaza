@@ -74,7 +74,6 @@
 <section id="plans">
     <div class="container">
         <div class="row">
-
             <div class="col-md-4 text-center">
                 <div class="panel panel-danger panel-pricing">
                     <div class="panel-heading">
@@ -88,7 +87,7 @@
                     <ul class="list-group text-center">
                         <li class="list-group-item"><i class="fa fa-check"></i> Personal use</li>
                         <li class="list-group-item"><i class="fa fa-check"></i> All social networks available</li>
-                        <li class="list-group-item"><i class="fa fa-check"></i> 27/7 support</li>
+                        <li class="list-group-item"><i class="fa fa-check"></i> 24/7 support</li>
                     </ul>
                     <div class="panel-footer">
                         <a class="btn btn-lg btn-block btn-danger" href="#">BUY NOW!</a>
@@ -109,7 +108,7 @@
                     <ul class="list-group text-center">
                         <li class="list-group-item"><i class="fa fa-check"></i> Personal use</li>
                         <li class="list-group-item"><i class="fa fa-check"></i> All social networks available</li>
-                        <li class="list-group-item"><i class="fa fa-check"></i> 27/7 support</li>
+                        <li class="list-group-item"><i class="fa fa-check"></i> 24/7 support</li>
                     </ul>
                     <div class="panel-footer">
                         <a class="btn btn-lg btn-block btn-warning" href="#">BUY NOW!</a>
@@ -130,7 +129,7 @@
                     <ul class="list-group text-center">
                         <li class="list-group-item"><i class="fa fa-check"></i> Personal use</li>
                         <li class="list-group-item"><i class="fa fa-check"></i> All social networks available</li>
-                        <li class="list-group-item"><i class="fa fa-check"></i> 27/7 support</li>
+                        <li class="list-group-item"><i class="fa fa-check"></i> 24/7 support</li>
                     </ul>
                     <div class="panel-footer">
                         <a class="btn btn-lg btn-block btn-success" href="#">BUY NOW!</a>

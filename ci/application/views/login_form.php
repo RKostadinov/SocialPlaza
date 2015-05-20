@@ -130,10 +130,10 @@
                             <input type="text" name="username" class="form-control" placeholder="Username" required="" autofocus="">
                             <input type="password" name="password" class="form-control" placeholder="Password" required="">
                                <?php if (isset($message_display))
-                                   echo "<div style = 'border-radius: 10px;' class='alert alert-danger' >
+                                    echo "<div style = 'border-radius: 10px;' class='alert alert-danger' >
                                             <span ><strong > Notice: </strong > Wrong username or password!</span >
                                         </div >";
-                               ?>
+                    ?>
                             <button class="btn btn-lg btn-primary btn-block" type="submit">
                                 Sign In
                             </button>
@@ -183,6 +183,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -192,23 +193,7 @@
                             </div>
                         </div>
                         </form>
-<!--                    				--><?php
-//                    				 	echo form_open('user_authentication/user_login_process');
-//                    					echo "<div class='error_msg'>";
-//                    					if (isset($error_message)) {
-//                    						echo $error_message;
-//                    					}
-//                    					echo validation_errors();
-//                    					echo "</div>";
-//                    					echo form_label('Username:');
-//                    					echo form_input('username');
-//                                        echo "<br/>";
-//                    					echo form_label('Password:');
-//                    					echo form_password('password');
-//                    					echo "<br/>";
-//                    					echo form_submit('submit', 'Login');
-//                    					echo form_close();
-//                    				?>
+
                     <a href="#about" class="btn btn-circle page-scroll">
                         <i class="fa fa-angle-double-down animated"></i>
                     </a>
@@ -261,10 +246,10 @@
             <h2>Contact SocialPlaza's developers</h2>
             <p>Feel free to email us if you have troubles login or you have questions.</p>
             <p>We works for our users!</p>
-            </br>
+            <br>
             <p><a href="mailto:admin@socialplaza.info">admin@socialplaza.info</a></p>
-            </br>
-            </br>
+            <br>
+            <br>
             <ul class="list-inline banner-social-buttons">
                 <li>
                     <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>

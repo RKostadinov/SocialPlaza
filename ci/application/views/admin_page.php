@@ -167,31 +167,10 @@
                     </div>
                 </div>
                 <div class="row well">
-                    <div class="item active" style="background-image: url('/ci/img/feed_background.png');  background-repeat: no-repeat">
+                    <div class="item active" style="background-image: url('/ci/img/feed_background.png');  background-repeat: no-repeat; ">
                         <div id="myDiv1"></div>
                     </div>
                 </div>
-<!--                <div class="row">-->
-<!--                    <div class="col-md-12 well">-->
-<!--                        <legend id="anch1"><a href="--><?php //echo base_url();?><!--facebook">Facebook</a></legend>-->
-<!--                        <a href="#" onclick="load_feed('http://localhost/ci/facebook','myDiv1')">Open Facebook Feed</a>-->
-<!--                        <div id="myDiv1"></div>-->
-<!--                    </div>-->
-<!--                    <div class="col-md-12 well">-->
-<!--                        <legend id="anch2"><a href="--><?php //echo base_url();?><!--twitter">Twitter</a></legend>-->
-<!--                        <a href="#" onclick="load_feed('http://localhost/ci/twitter','myDiv2')">Open Twitter Feed</a>-->
-<!--                        <div id="myDiv2"></div>-->
-<!--                    </div>-->
-<!--                    <div class="col-md-12 well">-->
-<!--                        <legend id="anch3"><a href="--><?php //echo base_url();?><!--instagram">Instagram</a></legend>-->
-<!--                        <a href="#" onclick="load_feed('http://localhost/ci/instagram','myDiv3')">Open Instagram Feed</a>-->
-<!--                        <div id="myDiv3"></div>-->
-<!--                    </div>-->
-<!--                    <div class="col-md-12 well">-->
-<!--                        <legend id="anch4"><a href="--><?php //echo base_url();?><!--linkedin">LinkedIn</a></legend>-->
-<!--                    </div>-->
-<!--                </div>-->
-
 <!--                <div class="navbar navbar-default navbar-static-bottom">-->
 <!--                    <p class="navbar-text pull-left">-->
 <!--                    <div id="socialmedia_wrapper">-->
