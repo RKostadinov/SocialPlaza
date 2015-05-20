@@ -328,7 +328,7 @@ a:focus {
     border: 1px solid #42dca3;
     outline: 0;
     color: #000;
-    background-color: #42dca3;
+    /*background-color: #42dca3;*/
 }
 
 ul.banner-social-buttons {
@@ -464,12 +464,15 @@ body {
     position: relative;
     font-size: 10px;
 }
-.orange-circle-button:hover {
+
+.orange-circle-button:hover,
+.orange-circle-button:focus{
     color:#ffffff;
     background-color: #b77d6e;
     text-decoration: none;
     border-color: #1b1b2a;
-
+    border: 1px solid #1b1b2a;
+    outline: 0;
 }
 .orange-circle-button:visited {
     color:#ffffff;

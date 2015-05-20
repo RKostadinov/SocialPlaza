@@ -21,6 +21,9 @@
 .polaroid {
     position: relative;
     width: 220px;
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .polaroid img {
@@ -29,7 +32,6 @@
     -webkit-box-shadow: 3px 3px 3px #577492;
     -moz-box-shadow: 3px 3px 3px #577492;
     box-shadow: 3px 3px 3px #577492;
-
 }
 
 .polaroid p {

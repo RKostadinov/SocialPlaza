@@ -16,7 +16,7 @@
                 <i class="fa fa-bars"></i>
             </button>
 
-            <a class="navbar-brand page-scroll" href="#page-top">
+            <a class="navbar-brand page-scroll" href="<?php echo base_url(); ?>">
                 <div class="nav-logo-visible">SocialPlaza</div>
             </a>
         </div>

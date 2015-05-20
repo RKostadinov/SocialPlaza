@@ -14,8 +14,6 @@
 </head>
 
 <body>
-
-<div class="container">
     <?php //site_url('facebook_process/loginByFacebook');?>
     <!-- @user_profile check when user login successed  -->
     <?php if (@$user_profile):  // call var_dump($user_profile) to view all data ?>
@@ -140,7 +138,6 @@
         <!-- Create link logout -->
         <a href="<?= $logout_url ?>" class='btn btn-blue'>Logout</a>
     <?php endif; ?>
-</div>
 
 
 </body>

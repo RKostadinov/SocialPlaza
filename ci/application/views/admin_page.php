@@ -49,7 +49,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
 
-                <a class="navbar-brand page-scroll" href="#page-top">
+                <a class="navbar-brand page-scroll" href="<?php echo base_url(); ?>">
                     <div class="nav-logo-visible">SocialPlaza</div>
                 </a>
             </div>
@@ -167,7 +167,7 @@
                     </div>
                 </div>
                 <div class="row well">
-                    <div class="item active">
+                    <div class="item active" style="background-image: url('/ci/img/feed_background.png');  background-repeat: no-repeat">
                         <div id="myDiv1"></div>
                     </div>
                 </div>
