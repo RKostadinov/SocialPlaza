@@ -213,7 +213,7 @@
         </div>
     </div>
 </section>
-<!--<img src="img/downloads-bg.jpg" style="max-width:100%;height:auto;">-->
+<img src="img/pic.png" style="max-width:100%;height:auto;">
 <!--How to use-->
 <section id="about" class="container content-section text-center">
     <div class="row">
