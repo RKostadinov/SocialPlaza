@@ -78,8 +78,7 @@ class Twconnect extends TwitterOAuth {
         $config = $ci->config->item('twitter');
 
         $access_token = $ci->twitter_database->get_tokens($ci->session->all_userdata());
-//        if (!($access_token && isset($access_token['oauth_token']) && isset($access_token['oauth_token_secret'])))
-//            redirect(base_url());
+
         /* Try to retrieve user access token (permanent) from session */
 
 
@@ -223,19 +222,18 @@ class Twconnect extends TwitterOAuth {
     /**
      * 5. POST request to Twitter API
      */
-    public function tw_post($url, $parameters = array()) {
-        $token = $this->tw_access_token;
+    public function tw_post($token, $url, $parameters = array()) {
+//        $token = $this->tw_access_token;
 
-        if ($token && isset($token['oauth_token'])
-            && isset($token['oauth_token_secret'])
-            && $this->tw_status == 'verified') {
+//        if ($token && isset($token['oauth_token'])
+//            && isset($token['oauth_token_secret']) ) {
 
             /* If method is set change API call made. Test is called by default. */
             return $this->post($url, $parameters);
-        } else {
-            // echo 'access tokens are not available, return false';
-            return false;
-        }
+//        } else {
+//             echo 'access tokens are not available, return false';
+//            return false;
+//        }
     }
 
     /**

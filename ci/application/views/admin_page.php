@@ -101,10 +101,12 @@
             <nav id="spy">
 <!--                <ul class="nav">-->
 <!--                    <li>-->
+                <form method = "POST" action ="<?php echo base_url();?>posts">
                         <div id = "textbox">
                            <textarea type="textarea" name="message" placeholder="What do you want to post?" class="post-box"></textarea>
                         </div>
                         <hr>
+
                             <div class="col-md-6">
                                 <div class="funkyradio">
                                     <div class="funkyradio-default">
@@ -116,7 +118,7 @@
                                         <label for="checkbox2">Twitter</label>
                                     </div>
                                     <div class="funkyradio-success">
-                                        <input type="checkbox" name="checkbox" id="checkbox3"/>
+                                        <input type="checkbox" name="linkedin" id="checkbox3"/>
                                         <label for="checkbox3">LinkedIn</label>
                                     </div>
                                 </div>
@@ -125,6 +127,7 @@
 <!--                    <li>-->
 
                 <button class="btn btn-lg btn-primary btn-block post_button" type="submit">Post</button>
+                </form>
 <!--                    </li>-->
 <!--                </ul>-->
             </nav>

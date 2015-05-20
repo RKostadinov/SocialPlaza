@@ -40,8 +40,8 @@ class Twitter extends CI_Controller {
         $this->session->unset_userdata('tw_status');
 		redirect('/');
 	}
-    public function tweet(){
-        $tweet = $this->input->post('tweet_text');
+    public function tweet($tweet){
+//        $tweet = $this->input->post('message');
         $this->twconnect->tw_post('statuses/update' , array('status' => $tweet));
     }
     public function get_home_timeline(){
