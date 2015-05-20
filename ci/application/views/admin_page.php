@@ -162,7 +162,6 @@
                             <li data-target="#myCarousel" data-slide-to="1"><a href="#" onclick="load_feed('http://localhost/ci/twitter','myDiv1')">Twitter</a></li>
                             <li data-target="#myCarousel" data-slide-to="2"><a href="#" onclick="load_feed('http://localhost/ci/instagram','myDiv1')">Instagram</a></li>
                             <li data-target="#myCarousel" data-slide-to="3"><a href="#">LinkedIn</a></li>
-                            <li data-target="#myCarousel" data-slide-to="4"><a href="#">+</a></li>
                         </ul>
                     </div>
                 </div>

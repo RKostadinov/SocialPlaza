@@ -213,7 +213,7 @@
         </div>
     </div>
 </section>
-
+<!--<img src="img/downloads-bg.jpg" style="max-width:100%;height:auto;">-->
 <!--How to use-->
 <section id="about" class="container content-section text-center">
     <div class="row">
@@ -225,19 +225,6 @@
     </div>
 </section>
 <img src="img/first_page_pic.png" style="max-width:100%;height:auto;">
-
-<!-- Download Section -->
-<!--<section id="download" class="content-section text-center">-->
-<!--    <div class="download-section">-->
-<!--        <div class="container">-->
-<!--            <div class="col-lg-8 col-lg-offset-2">-->
-<!--                <h1>Download SocialPlaza for Android</h2>-->
-<!--                <p>You can download SocialPlaza for free.</p>-->
-<!--                <a href="#" class="btn btn-default btn-lg">Visit Android market</a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
 
 <!-- Contact Section -->
 <section id="contact" class="container content-section text-center">
@@ -252,13 +239,13 @@
             <br>
             <ul class="list-inline banner-social-buttons">
                 <li>
-                    <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                 </li>
                 <li>
-                    <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    <a href="#" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
                 </li>
                 <li>
-                    <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    <a href="#" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
                 </li>
             </ul>
         </div>
