@@ -1,6 +1,6 @@
 <div class="container">
     <div class="starter-template">
-		<h1><?php echo ucfirst($user_data->data->username); ?>'s Instagram profile</h1>
+		<h1><?php echo ucfirst($user_data->data->username); ?></h1>
 			<?php echo img(array('src' => $user_data->data->profile_picture,'width' => '140', 'height' => '140', 'class'=>'img-thumbnail')); ?>
 	</div>
 </div>

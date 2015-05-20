@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Codeigniter 3.0 Instagram API Library</title>
+	<title>SocialPlaza | Instagram</title>
 	<?php echo link_tag('assets/magnific-popup.css');?>
 	<?php echo link_tag('assets/bootstrap.min.css');?>
 	<style type="text/css">
@@ -12,11 +12,33 @@
 	  padding-top: 50px;
 	}
 	.starter-template {
-	  padding: 40px 15px;
-	  text-align: center;
+	  /*padding: 40px 15px;*/
+	  /*text-align: center;*/
+        position: relative;
+        width: 220px;
+        padding-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
 	}
+    .starter-template img {
+        align-content: center;
+        border: 10px solid #b57b5d;
+        border-bottom: 45px solid #b57b5d;
+        -webkit-box-shadow: 3px 3px 3px #b57b5d;
+        -moz-box-shadow: 3px 3px 3px #b57b5d;
+        box-shadow: 3px 3px 3px #b57b5d;
+    }
+    .starter-template p {
+        position: absolute;
+        text-align: center;
+        margin-bottom: 5px;
+        width: 100%;
+        bottom: 0px;
+        font: 400 25px/1 'Kaushan Script', cursive;
+        color: #FFFFFF;
+    }
 	</style>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/jquery.magnific-popup.min.js" ></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/bootstrap.min.js" ></script>
 	<script type="text/javascript">

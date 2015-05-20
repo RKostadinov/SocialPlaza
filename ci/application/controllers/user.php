@@ -27,7 +27,6 @@ class User extends CI_Controller {
 		$data['user_data'] = $this->instagram_api->get_user($user_id);
 
 		$data['main_view'] = 'user_profile';
-
         // Get the user feed
         $data['user_feed'] = $this->instagram_api->get_user_feed();
 

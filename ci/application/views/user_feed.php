@@ -1,7 +1,7 @@
 <div class="container">
     <div class="starter-template">
-    	<?php echo img(array('src' => $user_data->data->profile_picture,'width' => '140', 'height' => '140', 'class'=>'img-thumbnail')); ?>
-		<h1><?php echo ucfirst($user_data->data->username); ?></h1>
+    	<?php echo img(array('src' => $user_data->data->profile_picture,'class'=>'img-thumbnail')); ?>
+		<p><?php echo ucfirst($user_data->data->username); ?></p>
 	</div>
 </div>
 
