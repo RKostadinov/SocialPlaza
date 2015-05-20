@@ -10,10 +10,11 @@ Class Posts extends CI_Controller{
         if($twitter){
             echo $message;
             $tokens = $this->twitter_database->get_tokens($this->session->all_userdata());
-            var_dump($this->config->item('consumer_key'));
-            $connection = new TwitterOAuth($this->config->item('consumer_key'), $this->config->item('consumer_secret'), $tokens[0]->oauth_token, $tokens[0]->oauth_token_secret);
+
+            $connection = $this->twitteroauth->create($this->config->item('twitter_consumer_token'), $this->config->item('twitter_consumer_secret'), $tokens[0]->oauth_token, $tokens[0]->oauth_token_secret);
             if(strlen($message) <= 140){
                 $connection->post('statuses/update', array('status' => $message));
+                redirect('/');
             }
         }
     }

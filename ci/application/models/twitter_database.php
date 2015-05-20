@@ -6,8 +6,8 @@ class Twitter_database extends CI_Model{
         $user_id =$this->get_user_id($data['session']);
         $content = array(
                         "user_id"               =>  $user_id,
-                        "oauth_token"           =>  $data['tw_access_token']['oauth_token'],
-                        "oauth_token_secret"    =>  $data['tw_access_token']['oauth_token_secret']
+                        "oauth_token"           =>  $data['access_token'],
+                        "oauth_token_secret"    =>  $data['access_token_secret']
                         );
 //        $this->db->where('user_id', $user_id);
         $this->db->insert('twitter', $content);
@@ -48,14 +48,18 @@ class Twitter_database extends CI_Model{
     }
 
      public function get_tokens($data){
-         $user_id =$this->get_user_id($data["session"]);
-         $this->db->select('oauth_token,oauth_token_secret');
-         $this->db->from('twitter');
-         $condition = "user_id =" . $user_id ;
-         $this->db->where($condition);
-         $query = $this->db->get();
-         $tokens = $query->result();
-         return $tokens;
+         if(isset($data['session'])) {
+             $user_id = $this->get_user_id($data["session"]);
+             $this->db->select('oauth_token,oauth_token_secret');
+             $this->db->from('twitter');
+             $condition = "user_id =" . $user_id;
+             $this->db->where($condition);
+             $query = $this->db->get();
+             $tokens = $query->result();
+             return $tokens;
+         }else{
+             return false;
+         }
      }
 
 

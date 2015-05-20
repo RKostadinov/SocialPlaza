@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database', 'session', 'email', 'form_validation', 'twitter/twconnect' );
+$autoload['libraries'] = array('database', 'session', 'email', 'form_validation', 'twitter/twitteroauth' );
 
 
 /*
