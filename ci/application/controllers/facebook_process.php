@@ -27,7 +27,6 @@ class Facebook_process extends CI_Controller
 //            try {
 //                $data['user_profile'] = $this->facebook->api('/me');
 //                $accessToken = $this->facebook->getAccessToken();
-//                $this->session->set_userdata('facebook', $accessToken);
 //            } catch (FacebookApiException $e) {
 //                $user = null;
 //            }

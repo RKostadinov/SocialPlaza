@@ -76,7 +76,7 @@ class Lib_login
             } catch(FacebookRequestException $ex) {
                 // When Facebook returns an error
                 // handle this better in production code
-                print_r($ex);
+//                print_r($ex);
             } catch(Exception $ex) {
                 // When validation fails or other local issues
                 // handle this better in production code

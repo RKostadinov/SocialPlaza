@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Skip these two lines if you're using Composer
 define('FACEBOOK_SDK_V4_SRC_DIR', APPPATH . 'libraries/facebook/vendor/Facebook/');
 require APPPATH . 'libraries/facebook/vendor/Facebook/autoload.php';
@@ -19,7 +20,8 @@ class Facebook {
 
     public function __construct() {
         $this->ci =& get_instance();
-//        $this->ci->config->load('facebook');
+        $ci =& get_instance();
+        $ci->load->model('facebook_database');
 
         $this->permissions = $this->ci->config->item('permissions', 'facebook');
 
@@ -31,7 +33,8 @@ class Facebook {
         // e.g. $helper = new FacebookRedirectLoginHelper( 'http://mydomain.com/redirect' );
         $this->helper = new FacebookRedirectLoginHelper( $this->ci->config->item('redirect_url', 'facebook') );
 
-        if ( $this->ci->session->userdata('fb_token') ) {
+        if ( $this->ci->session->userdata('fb_token') ||  $ci->facebook_database->get_tokens($ci->session->all_userdata())){
+
             $this->session = new FacebookSession( $this->ci->session->userdata('fb_token') );
 
             // Validate the access_token to make sure it's still valid
@@ -56,6 +59,8 @@ class Facebook {
 
         if ( $this->session ) {
             $this->ci->session->set_userdata( 'fb_token', $this->session->getToken() );
+
+            $ci->facebook_database->insert_tokens($ci->session->all_userdata());
 
             $this->session = new FacebookSession( $this->session->getToken() );
         }
@@ -87,6 +92,7 @@ class Facebook {
         return false;
     }
     public function post($message){
+
         $request = ( new FacebookRequest( $this->session, 'POST', '/me/feed', array('message'=>$message) ) )->execute();
 
 

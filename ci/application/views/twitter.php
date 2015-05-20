@@ -31,9 +31,7 @@
         echo "<br />";
         echo "</div>";
     }
-//    echo 'Session data:<br/><pre>';
-//    print_r($this->session->all_userdata());
-//    echo '</pre>';
+
 ?>
 </body>
 

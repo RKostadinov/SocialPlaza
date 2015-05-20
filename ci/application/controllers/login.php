@@ -18,12 +18,11 @@ class Login extends CI_Controller
     {
         $fb_data = $this->lib_login->facebook();
 
-        // check login data
         if (isset($fb_data['me'])) {
-//            var_dump($this->session->all_userdata());
-            var_dump($fb_data);
+
+            redirect('/');
         } else {
-            echo '<a href="' . $fb_data['loginUrl'] . '">Login</a>';
+            redirect($fb_data['loginUrl']);
         }
     }
 }

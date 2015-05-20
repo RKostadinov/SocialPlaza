@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 Class User_Authentication extends CI_Controller {
 

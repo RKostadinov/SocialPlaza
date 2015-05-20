@@ -109,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('twitter_database', 'login_database');
+$autoload['model'] = array('twitter_database', 'login_database', 'facebook_database');
 
 
 /* End of file autoload.php */
