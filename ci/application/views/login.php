@@ -4,8 +4,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>SocialPlaza | Facebook</title>
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="scripts/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
     <link href="<?php echo base_url();?>css/feeds.css" rel="stylesheet">
@@ -87,8 +85,9 @@
                                                         echo "<tr>";
                                                         echo "<td>";
                                                         echo "<img src =" . $post['picture'] . " />";
-                                                        echo "<p></p>";
+                                                        echo "<br>";
                                                         echo "<div class='button'>";
+                                                        echo "<br>";
                                                         echo "<p><a href=\"" . $post['link'] . "\" target=\"_blank\" class='btn btn-blue'>View photo &rarr;</a><p>";
                                                         echo "</div>";
                                                         echo "</td>";
